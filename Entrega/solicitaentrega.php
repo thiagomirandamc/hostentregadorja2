@@ -8,7 +8,7 @@ include('../conexao2.php');
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Solicitar Entrega</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="../../css/bulma.min.css" />
+        <link rel="stylesheet" href="css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="../../css/login.css">
         <script type="text/javascript" src="../../jquery.min.js"></script>
         <script type="text/javascript" src="../../smoothscroll.js"></script>
