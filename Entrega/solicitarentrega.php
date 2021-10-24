@@ -44,7 +44,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
- CURLOPT_POSTFIELDS => "{\n\t\"number\": \"559191950996\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"text\": \"*Entrega:* 1 *Estabelecimento:* Top Mix \\n*Endereço:* $logradouro \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro    \"\n\t\n}",
+ CURLOPT_POSTFIELDS => "{\n\t\"number\": \"559191950996\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"text\": \"*Entrega:* 1 *Estabelecimento:* Top Mix \\n*Endereço:* $logradouro \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n.\\O Entregador que queira por favor acessar o link: \\nwww.linkdeexemplo.com.br/aceitar    \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"
