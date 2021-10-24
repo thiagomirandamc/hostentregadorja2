@@ -31,68 +31,7 @@ include('../conexao2.php');
     </head>
 
     <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <a class="navbar-brand" href="#">
-       <img src="../img/logo-systemway-transp.png" width="112" height="28" alt="">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Painéis de Vendas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="painelatividades.php" >Principal de Vendas</a>
-            <a class="dropdown-item" href="painelprospects.php">Prospects</a>
-          <a class="dropdown-item" href="gerenciadortarefasvendas.php#atual">Calendário</a>
-          <a class="dropdown-item" href="paineloportunidades.php">B.I Vendas</a>
-          </div>
-      </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Cadastros
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="cadastrocliente.php">Cadastro de Leads</a>
-          <a class="dropdown-item" href="cadastrosistema.php">Cadastro de  Sistemas</a>
-          
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Oportunidade
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="cadastrooportunidade.php">Gerar Oportunidade</a>
-            <a class="dropdown-item" href="cadastroatividade.php">Gerar Atividade</a>
-            <a class="dropdown-item" href="showoportunidade.php">Consulta Oportunidade</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Orçamentos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="navbar-item">Gerar Orçamento</a>
-        </div>
-      </li>
-     <div class="container">
-      <li class="nav-item">
-           <a href="telainicial.php">Módulos</a>
-      </li>
-      </div>
-      <div class="container">
-      <li class="nav-item">
-      <a href="logout.php">Sair</a>
-      </li>
-      </div>
-    </ul>
-  </div>
-</nav>
         <section class="hero is-success is-fullheight">
             <form action="solicitarentrega.php" method="POST">
                 <div class="hero-body">
@@ -179,7 +118,7 @@ include('../conexao2.php');
                         <br>
                         <br>
                         <div class="field">
-                            <input  type="submit" class="button is-link is-outlined is-rounded has-text-link" target="_blank" value=" Gerar PDF">
+                            <input  type="submit" class="button is-link is-outlined is-rounded has-text-link" target="_blank" value=" Gerar entrega!">
 
                             </form>
                         </div>
