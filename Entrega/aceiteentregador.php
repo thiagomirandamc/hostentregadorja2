@@ -75,8 +75,32 @@ $valorbairro =$row_obairro['valor'];
                             <h3 class="title has-text-grey">Aceite de Entregador</h3>    
                             </br>
                            
-                            
-
+            <form action="aceiteentregador.php#" method="GET">
+                <label class="label">Id Entrega</label>
+                <div class="field has-addons">
+                    <div class="control">
+                        <input class="input is-info" type="search"  name="identrega"  list="identrega" >
+                        <datalist id="identrega"> 
+                            <option></option> 
+                            <?php
+                            $res_nomecliente = "SELECT * FROM entregas";
+                            $resultado_nomecliente = mysqli_query($conexao, $res_nomecliente);
+                            while ($row_nomecliente = mysqli_fetch_assoc($resultado_nomecliente)) {
+                                ?>
+                                <option value="<?php echo $row_nomecliente['identrega']; ?>"><?php echo $row_nomecliente['identrega']; ?>                               
+                                </option> <?php
+                            }
+                            ?>
+                        </datalist>
+                    </div>
+                    <div class="control">
+                        <button type="submit" class="button is-link is-rounded">Consultar entrega</button>
+                    </div>
+                </div> 
+            </form>
+            <?php
+            if (isset($_GET['identrega'])) { 
+                        ?>
                             <div class="content"> 
                                     <div class="title is-5 has-text-weight-bold" >Entrega nº:<?php echo $identrega ?></div>  
                                 </div>
@@ -115,7 +139,7 @@ $valorbairro =$row_obairro['valor'];
                     </div>
                 </div>
             </div>
-
+<?php } ?>
         </div>
     </div>
 </div>                        
