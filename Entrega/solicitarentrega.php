@@ -1,6 +1,8 @@
 <?php
 
 include ('../conexao2.php');
+session_start();
+include ('../login/verifica_login.php');
 
 /*$idcliente = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $result_clioport = "SELECT * FROM clientecarteira WHERE idclientecarteira = '$idcliente'";
@@ -13,7 +15,8 @@ $row_oportusuario = mysqli_fetch_assoc($resultado_oport);
 $contato = $_POST['contato'];
 $logradouro = $_POST['logradouro'];
 $referencia = $_POST['referencia'];
-$idestabelecimento = 13;
+$idestabelecimento = $_SESSION['usuario_id'];
+
 
 $resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
