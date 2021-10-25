@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexao2.php');
+include('../conexao2.php');
 
 if(empty($_POST['usuario']) || empty($_POST['senha'])) {
 	header('Location: ../index.php');
@@ -19,7 +19,7 @@ $row = mysqli_num_rows($result);
 if($row == 1) {
 	$usuario_bd = mysqli_fetch_assoc($result);
 	$_SESSION['nome'] = $usuario_bd['nome'];
-	header('Location: /entrega/solicitarentrega.php');
+	header('Location: ../Entrega/solicitaentrega.php');
 	exit();
 } else {
 	$_SESSION['nao_autenticado'] = true;
