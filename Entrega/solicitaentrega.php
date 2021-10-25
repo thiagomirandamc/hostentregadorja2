@@ -46,7 +46,7 @@ include ('../login/verifica_login.php');
                             <?php
                             $idestabelecimento = $_SESSION['usuario_id'];
                             ?>
-                            <input name="idestabelecimento" class="input" type="hidden" value="<?php echo $idestabelecimento ;?>">
+                            
 
                            <div class="field">  
 
