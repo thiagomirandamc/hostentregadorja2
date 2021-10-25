@@ -81,7 +81,7 @@ include('../conexao2.php');
                        
                          <div class="field">  
 
-                                <label id="endereco" class="label">Logradouro:</label>
+                                <label id="endereco" class="label">Logradouro, número , se tiver entre ruas:</label>
                                 
 
                                     <input class="input is-info" type="text"  name="logradouro">
