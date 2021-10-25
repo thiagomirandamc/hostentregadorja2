@@ -19,7 +19,7 @@ session_start();
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-grey">Sistema de Login</h3>
-                    <h3 class="title has-text-grey"><a href="https://systemwayautomacao.com.br" target="_blank">SystemWay</a></h3>
+                    <h3 class="title has-text-grey"><a href="https://systemwayautomacao.com.br" target="_blank">Entregador já</a></h3>
                     <?php
                     if(isset($_SESSION['nao_autenticado'])):
                         ?>
