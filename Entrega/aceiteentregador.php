@@ -3,10 +3,8 @@ include('../conexao2.php');
 session_cache_expire(18000);
 session_start();
 include ('../login/verifica_login.php');
-$identrega = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$result_clioport = "SELECT * FROM entregas WHERE identrega = '$identrega'";
-$resultado_oport = mysqli_query($conexao2, $result_clioport);
-$row_oportusuario = mysqli_fetch_assoc($resultado_oport);
+
+
 
 $idcliente = $row_oportusuario['idcliente'];
 $status = $row_oportusuario['status'];
@@ -84,7 +82,7 @@ $valorbairro =$row_obairro['valor'];
                             <option></option> 
                             <?php
                             $res_nomecliente = "SELECT * FROM entregas";
-                            $resultado_nomecliente = mysqli_query($conexao, $res_nomecliente);
+                            $resultado_nomecliente = mysqli_query($conexao2, $res_nomecliente);
                             while ($row_nomecliente = mysqli_fetch_assoc($resultado_nomecliente)) {
                                 ?>
                                 <option value="<?php echo $row_nomecliente['identrega']; ?>"><?php echo $row_nomecliente['identrega']; ?>                               
@@ -100,6 +98,15 @@ $valorbairro =$row_obairro['valor'];
             </form>
             <?php
             if (isset($_GET['identrega'])) { 
+
+                $result_clioport = "SELECT * FROM entregas WHERE identrega = '$_GET['identrega']'";
+                $resultado_oport = mysqli_query($conexao2, $result_clioport);
+                
+                
+                 }
+                
+                if ($resultado_oport) {
+                    while ($row_oportusuario = mysqli_fetch_assoc($resultado_oport)) {
                         ?>
                             <div class="content"> 
                                     <div class="title is-5 has-text-weight-bold" >Entrega nº:<?php echo $identrega ?></div>  
@@ -139,7 +146,7 @@ $valorbairro =$row_obairro['valor'];
                     </div>
                 </div>
             </div>
-<?php } ?>
+<?php } } ?>
         </div>
     </div>
 </div>                        
