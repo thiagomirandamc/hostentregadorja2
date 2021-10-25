@@ -13,6 +13,7 @@ $row_oportusuario = mysqli_fetch_assoc($resultado_oport);
 $contato = $_POST['contato'];
 $logradouro = $_POST['logradouro'];
 $referencia = $_POST['referencia'];
+$idestabelecimento = $_POST['idestabelecimento'];
 
 $bairro = $_POST['bairro'];
 $result_clioport2 = "SELECT * FROM bairros WHERE nome = '$bairro'";
@@ -30,7 +31,7 @@ $row = mysqli_fetch_assoc($resultado);
  $idcliente = $row['idcliente'];
 
 $status = "Aberta";
-$sql = "INSERT INTO entregas (status, idcliente, logradouro, idbairro, referencia, dataehorapedida)  VALUES ('$status', '$idcliente', '$logradouro', '$idbairro', '$referencia', NOW())";
+$sql = "INSERT INTO entregas (status, idcliente, logradouro, idbairro, idestalecimento, referencia, dataehorapedida, valor)  VALUES ('$status', '$idcliente', '$logradouro', '$idbairro', $idestabelecimento, '$referencia', NOW(), '$valor')";
 $resul = mysqli_query($conexao2, $sql);
                 
 
@@ -44,7 +45,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
- CURLOPT_POSTFIELDS => "{\n\t\"number\": \"559191950996\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"text\": \"*Entrega:* 1 *Estabelecimento:* Top Mix \\n*Endereço:* $logradouro \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Entregadores para aceitar, acessar o link abaixo   \"\n\t\n}",
+ CURLOPT_POSTFIELDS => "{\n\t\"number\": \"5591992932414\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"text\": \"*Entrega:* 1 *Estabelecimento:* Top Mix \\n*Endereço:* $logradouro \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Entregadores para aceitar, acessar o link abaixo   \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"

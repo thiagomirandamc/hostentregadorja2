@@ -43,8 +43,10 @@ include ('../login/verifica_login.php');
                         <div class="column is-4 is-offset-4">
                             <h3 class="title has-text-grey">Solicite sua entrega</h3>    
                             </br>
-                           
-                            
+                            <?php
+                            $idestalecimento = $_SESSION['usuario_id'];
+                            ?>
+                            <input name="idestabelecimento" class="input" type="hidden" value="<?php echo $idestalecimento ;?>">
 
                            <div class="field">  
 
