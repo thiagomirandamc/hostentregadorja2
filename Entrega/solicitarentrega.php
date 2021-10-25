@@ -13,7 +13,7 @@ $row_oportusuario = mysqli_fetch_assoc($resultado_oport);
 $contato = $_POST['contato'];
 $logradouro = $_POST['logradouro'];
 $referencia = $_POST['referencia'];
-$idestabelecimento = $_POST['idestabelecimento'];
+$idestabelecimento = 13;
 
 $resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
