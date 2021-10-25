@@ -15,7 +15,7 @@ $logradouro = $_POST['logradouro'];
 $referencia = $_POST['referencia'];
 $idestabelecimento = $_POST['idestabelecimento'];
 
-$resuesta = "SELECT * FROM usuarios WHERE usuario_id = '$idestabelecimento'";
+$resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
 $row_oporest = mysqli_fetch_assoc($resuleta);
 $nomeestabelecimento = $row_oporest['nome'];
