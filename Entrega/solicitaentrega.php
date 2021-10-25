@@ -54,7 +54,7 @@ include('../conexao2.php');
                             
                             <div class="field">  
 
-                                <label id="contato" class="label">Contato dele:</label>
+                                <label id="contato" class="label">Contato dele(WhatsApp):</label>
                                 
 
                                     <input class="input is-info" type="text"  name="contato">
