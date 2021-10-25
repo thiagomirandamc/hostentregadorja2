@@ -31,7 +31,7 @@ session_start();
                     unset($_SESSION['nao_autenticado']);
                     ?>
                     <div class="box">
-                        <form action="login.php" method="POST">
+                        <form action="/login/login.php" method="POST">
                             <div class="field">
                                 <div class="control">
                                     <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
