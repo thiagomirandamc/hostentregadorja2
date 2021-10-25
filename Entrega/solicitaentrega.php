@@ -1,5 +1,7 @@
 <?php
 include('../conexao2.php');
+session_start();
+include ('../login/verifica_login.php');
 ?>
 <html>
     <head>    
