@@ -36,7 +36,7 @@ $row = mysqli_fetch_assoc($resultado);
  $idcliente = $row['idcliente'];
 
 $status = "Aberta";
-$sql = "INSERT INTO entregas (status, idcliente, logradouro, idbairro, idestabelecimento, referencia, dataehorapedida, valor)  VALUES ('$status', '$idcliente', '$logradouro', '$idbairro', $idestabelecimento, '$referencia', NOW(), '$valor')";
+$sql = "INSERT INTO entregas (status, idcliente, logradouro, idbairro, idestabelecimento, referencia, dataehorapedida, valor)  VALUES ('$status', '$idcliente', '$logradouro', '$idbairro', '$idestabelecimento', '$referencia', NOW(), '$valor')";
 $resul = mysqli_query($conexao2, $sql);
        
 $sql22 = "Select * from entregas Order by identrega DESC";
