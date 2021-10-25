@@ -61,7 +61,7 @@ include('../conexao2.php');
                                 
                             </div>
                             <div class="field">
-                                <a class="has-text-link" href="cadastrocliente.php">Já tem cadastro? Clique aqui.</a>
+                                <a class="has-text-link" href="cadastrocliente.php">Cliente já tem cadastro? Clique aqui.</a>
                             </div>
                             <br>
                             <br>
