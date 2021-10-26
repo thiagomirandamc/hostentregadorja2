@@ -131,7 +131,7 @@ include ('../login/verifica_login.php');
                                   
                                   <div class="container">
                                       <div class="hero-body">
-            <div id="oportunidade">
+            
                 
             <a class="title has-text-link">Dados</a>
             </div>
@@ -150,7 +150,7 @@ include ('../login/verifica_login.php');
                                 <?php } ?>  </div>
                                      <div class="content">
                                     <div class="title is-5 has-text-weight-bold"> Estabelecimento que quer a entrega: <?php echo $idestabelecimento ?> </div>  
-                                    <div class="title is-6 has-text-weight-light" ><?php echo $cli1 ?> </div>  
+                                    <div class="title is-6 has-text-weight-light" >Cliente: <?php echo $cli1 ?> </div>  
                                 </div>
                     <div class="content">
                     <div class="title is-5 has-text-weight-bold"> Endereço da entrega: </div>  
@@ -159,7 +159,14 @@ include ('../login/verifica_login.php');
                 
                 
                 
-                 
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            
+
                                   
           
             
@@ -188,6 +195,8 @@ include ('../login/verifica_login.php');
                     </div>
                   
               </div>
-        
+</div>
+
+
     </body>
 </html>
