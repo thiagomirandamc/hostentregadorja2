@@ -41,9 +41,7 @@ include ('../login/verifica_login.php');
 
     <body>
 
-        <section class="hero is-success is-fullheight">
         
-                <div class="hero-body">
 
                     <div class="container has-text-centered">
                         <div class="column is-4 is-offset-4">
@@ -73,6 +71,10 @@ include ('../login/verifica_login.php');
                     </div>
                 </div> 
             </form>
+
+            <section class="hero is-success is-fullheight">
+        
+                <div class="hero-body">
             <?php
             if (isset($_GET['identrega'])) { 
 
@@ -130,7 +132,7 @@ include ('../login/verifica_login.php');
                     </div>
                 </div>         
         </section>
-        <div id="sistemanumberone" class="container" > 
+        <div class="container" > 
         <section class="hero is-success is-fullheight">              
             <div class="hero-body">
                 <div class="container has-text-centered">
@@ -149,7 +151,7 @@ include ('../login/verifica_login.php');
                     </div>
                 </div>
             </div>
-<?php } } ?>
+<?php } }  ?>
         </div>
     </div>
 </div>                        
