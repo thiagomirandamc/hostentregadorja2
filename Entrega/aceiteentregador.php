@@ -106,12 +106,14 @@ include ('../login/verifica_login.php');
                             while ($rs1267763 = mysqli_fetch_assoc($exe679786)) {
                             $nomebairro = $rs1267763['nome']; 
 
+                            }
                         $referencia = $rs3['referencia'];
                         $idestabelecimento = $rs3['idestabelecimento'];
                             $sql128 = "select * FROM usuario WHERE usuario_id = '$idestabelecimento'";
                             $exec35454 = mysqli_query($conexao2, $sql128);
                             while ($rs12984 = mysqli_fetch_assoc($exec35454)) {
                             $nomeestabelecimento = $rs12984['nome']; 
+                            }
                            
                         $identregador =$rs3['identregador'];
                             $sql434 = "select * FROM usuario WHERE usuario_id = '$idestabelecimento'";
@@ -120,7 +122,7 @@ include ('../login/verifica_login.php');
                             $nomeentregador = $rs565['nome']; 
                         
                        
-                    
+                            }
                 
                         
                        
@@ -137,7 +139,7 @@ include ('../login/verifica_login.php');
 
                         <div class="content">
                 <div class="title is-5 has-text-weight-bold">Id entrega:</div>  
-                <div class="title is-6 has-text-weight-light " >  <?php echo $id1 ?> </div>
+                <div class="title is-6 has-text-weight-light " >  <?php echo $_GET[identrega] ?> </div>
                                 </div>
 
                             </div>
@@ -153,7 +155,7 @@ include ('../login/verifica_login.php');
                         <br>
                      
                         <?php
-                                       }           }       }           
+                                                  
         }
     }
 }
