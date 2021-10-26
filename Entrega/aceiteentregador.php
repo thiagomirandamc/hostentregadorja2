@@ -49,7 +49,7 @@ include ('../login/verifica_login.php');
                             </br>
                            
                             <form action="aceiteentregador.php#" method="GET">
-                <label class="label">Id Implantação</label>
+                <label class="label">Id Entrega</label>
                 <div class="field has-addons">
                     <div class="control">
                         <input class="input is-info" type="search"  name="identrega"  list="identrega" >
@@ -57,7 +57,7 @@ include ('../login/verifica_login.php');
                             <option></option> 
                             <?php
                             $res_nomecliente = "SELECT * FROM entregas";
-                            $resultado_nomecliente = mysqli_query($conexao, $res_nomecliente);
+                            $resultado_nomecliente = mysqli_query($conexao2, $res_nomecliente);
                             while ($row_nomecliente = mysqli_fetch_assoc($resultado_nomecliente)) {
                                 ?>
                                 <option value="<?php echo $row_nomecliente['identrega']; ?>"><?php echo $row_nomecliente['identrega']; ?>                               
