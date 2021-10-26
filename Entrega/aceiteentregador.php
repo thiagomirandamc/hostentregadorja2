@@ -61,7 +61,7 @@ include ('../login/verifica_login.php');
         <div class="column is-4 is-offset-4">
 
             <form action="aceiteentregador.php" method="GET">
-                <label class="label">Cliente</label>
+                <label class="label">ID da entrega</label>
                 <div class="field has-addons">
                     <div class="control">
                         <input class="input is-info" type="search"  name="identrega"  list="identrega" >
@@ -123,7 +123,7 @@ include ('../login/verifica_login.php');
                                     
                                       <div class="content">
                                       <?php if ($status == 'Aberta') { ?>
-                               <span class="tag is-success"><?php echo $status ?> </a>   </span>      
+                               <span class="tag is-primary"><?php echo $status ?> </a>   </span>      
                                 <?php } elseif ($status == 'Fechada' ) { ?>
                                 <span class="tag is-info"><?php echo $status ?> </a>   </span> 
                                 <?php } elseif ($status == 'Cancelada' ) { ?>
@@ -145,15 +145,19 @@ include ('../login/verifica_login.php');
                                     <div class="title is-5 has-text-weight-bold">Valor Sugerido: </div> <div  class="title is-6 has-text-weight-light" >R$<?php echo $valorsugerido ?> </div>  
                                 </div>
                             
-
+                                <div class="content">
+                                <?php if ($status == 'Aberta') { ?>
+                                    <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
+                                    <?php echo "<a class='tag is-success' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
+                                </div>
+                                 <?php }
                                 
-                      
                          
             
                             
                         <br>
                         <br>
-                     
+                     <?>
                      
                         </div>
                   
