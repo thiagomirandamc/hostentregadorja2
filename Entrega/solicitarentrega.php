@@ -15,13 +15,14 @@ $row_oportusuario = mysqli_fetch_assoc($resultado_oport);
 $contato = $_POST['contato'];
 $logradouro = $_POST['logradouro'];
 $referencia = $_POST['referencia'];
-$idestabelecimento = $_SESSION['usuario_id'];
+$nomeestabelecimento = $_SESSION['nome'];
 
 
-$resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
+$resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
 $row_oporest = mysqli_fetch_assoc($resuleta);
-$nomeestabelecimento = $_SESSION['nome'];
+ $idestabelecimento = $row_oportusuario2['usuario_id'];
+
 
 $bairro = $_POST['bairro'];
 $result_clioport2 = "SELECT * FROM bairros WHERE nome = '$bairro'";
