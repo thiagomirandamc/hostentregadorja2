@@ -113,7 +113,7 @@ include ('../login/verifica_login.php');
 
                         <div class="field">  
 
-                                <label id="referencia" class="label">Referencia:</label>
+                                <label id="referencia" class="label">Referência:</label>
                                 
 
                                     <input class="input is-info" type="text"  name="referencia">
