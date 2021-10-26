@@ -83,7 +83,7 @@ include ('../login/verifica_login.php');
                 $sql13 = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
-                 
+            }
                 
                 if ($execut3) {
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
@@ -125,66 +125,35 @@ include ('../login/verifica_login.php');
                         
                        
                         ?>
-              <div class="columns is-desktop">
+            
                               
-                              <div class="column">
-                                  
-                                  <div class="container">
-                                      <div class="hero-body">
-            
-                
-            <a class="title has-text-link">Dados</a>
-            </div>
+                           
+            <section class="hero is-success is-fullheight">
+           
+                <div class="hero-body">
+
+                    <div class="container has-text-centered">
+                        <div class="column is-4 is-offset-4">
+
+                        <div class="content">
+                <div class="title is-5 has-text-weight-bold">Id entrega:</div>  
+                <div class="title is-6 has-text-weight-light " >  <?php echo $id1 ?> </div>
+                                </div>
+
+                            </div>
+                            </div>
+                            </div>
+                            </form>
+                            </section>
                                       <br>
                                       <br>
-                                      <div class="content"> 
-                                    <div class="title is-5 has-text-weight-bold" >#<?php echo $id1 ?></div>  
-                                </div>
-                                      <div class="content">
-                                      <?php if ($status == 'Aberta') { ?>
-                               <span class="tag is-success"><?php echo $status ?> </a>   </span>      
-                                <?php } elseif ($status == 'Fechada' ) { ?>
-                                <span class="tag is-info"><?php echo $status ?> </a>   </span> 
-                                <?php } elseif ($status == 'Cancelada' ) { ?>
-                                <span class="tag is-danger"><?php echo $status ?> </a>   </span>
-                                <?php } ?>  </div>
-                                     <div class="content">
-                                    <div class="title is-5 has-text-weight-bold"> Estabelecimento que quer a entrega: <?php echo $idestabelecimento ?> </div>  
-                                    <div class="title is-6 has-text-weight-light" >Cliente: <?php echo $cli1 ?> </div>  
-                                </div>
-                    <div class="content">
-                    <div class="title is-5 has-text-weight-bold"> Endereço da entrega: </div>  
-                <button type="button" class="button is-link is-outlined is-small"><?php echo $logradouro ?> - <?php echo $nomebairro ?> - <?php echo $referencia ?>  </button>
-                </div>                 
-                
-                
-                
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                            
-
-                                  
-          
-            
-
-                
-                 
-                                
-                      
-                         
-            
+                                      
                             
                         <br>
                         <br>
                      
                         <?php
-                             } }
-                }
-            }
+                                       }           }       }           
         }
     }
 }
