@@ -35,7 +35,7 @@ $row_oportusuario2 = mysqli_fetch_assoc($resultado_oport2);
  $valorbairro = $row_oportusuario2['valor'];
 
 $status = "Aberta";
-$sql = "INSERT INTO entregas (status, logradouro, idbairro, idestabelecimento, referencia, dataehorapedida, valor, numero, complemento, observacoes)  VALUES ('$status', '$idcliente', '$logradouro', '$idbairro', '$idestabelecimento', '$referencia', NOW(), '$valor', '$numero', '$complemento', '$observacoes')";
+$sql = "INSERT INTO entregas (status, logradouro, idbairro, idestabelecimento, referencia, dataehorapedida, valor, numero, complemento, observacoes)  VALUES ('$status', '$logradouro', '$idbairro', '$idestabelecimento', '$referencia', NOW(), '$valor', '$numero', '$complemento', '$observacoes')";
 $resul = mysqli_query($conexao2, $sql);
        
 $sql22 = "Select * from entregas Order by identrega DESC";
