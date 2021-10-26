@@ -6,30 +6,7 @@ include ('../login/verifica_login.php');
 
 
 
-$idcliente = $row_oportusuario['idcliente'];
-$status = $row_oportusuario['status'];
-$idestabelecimento = $row_oportusuario['idestabelecimento'];
-$dataehorapedida = $row_oportusuario['dataehorapedida'];
 
-$resuesta = "SELECT * FROM usuarios WHERE usuario_id = '$idestabelecimento'";
-$resuleta = mysqli_query($conexao2, $resuesta);
-$row_oporest = mysqli_fetch_assoc($resuleta);
-$nomeestabelecimento = $row_oporest['nome'];
-
-$resu = "SELECT * FROM clientes WHERE idcliente = '$idcliente'";
-$resulta = mysqli_query($conexao2, $resu);
-$row_oportusu = mysqli_fetch_assoc($resulta);
-$nomecliente = $row_oportusu['nome'];
-$contatocliente = $row_oportusu['contato'];
-$logradourocliente = $row_oportusu['logradouro'];
-$idbairrocliente = $row_oportusu['idbairro'];
-$referenciacliente = $row_oportusu['referencia'];
-
-$resbairro = "SELECT * FROM bairros WHERE idbairro = '$idbairro'";
-$resultabairro = mysqli_query($conexao2, $resbairro);
-$row_obairro = mysqli_fetch_assoc($resultabairro);
-$nomebairro =$row_obairro['nome'];
-$valorbairro =$row_obairro['valor'];
 
 
 ?>
@@ -108,10 +85,34 @@ $valorbairro =$row_obairro['valor'];
                  }
                 
                 if ($resultado_oport) {
-                    while ($row_oportusuario = mysqli_fetch_assoc($resultado_oport)) {
+                    while ($rs3 = mysqli_fetch_assoc($resultado_oport)) {
+                        $idcliente = $rs3['idcliente'];
+                        $status = $rs3['status'];
+                        $idestabelecimento = $rs3['idestabelecimento'];
+                        $dataehorapedida = $rs3['dataehorapedida'];
+
+                        $resuesta = "SELECT * FROM usuarios WHERE usuario_id = '$idestabelecimento'";
+                        $resuleta = mysqli_query($conexao2, $resuesta);
+                        $row_oporest = mysqli_fetch_assoc($resuleta);
+                        $nomeestabelecimento = $row_oporest['nome'];
+
+                        $resu = "SELECT * FROM clientes WHERE idcliente = '$idcliente'";
+                        $resulta = mysqli_query($conexao2, $resu);
+                        $row_oportusu = mysqli_fetch_assoc($resulta);
+                        $nomecliente = $row_oportusu['nome'];
+                        $contatocliente = $row_oportusu['contato'];
+                        $logradourocliente = $row_oportusu['logradouro'];
+                        $idbairrocliente = $row_oportusu['idbairro'];
+                        $referenciacliente = $row_oportusu['referencia'];
+
+                        $resbairro = "SELECT * FROM bairros WHERE idbairro = '$idbairrocliente'";
+                        $resultabairro = mysqli_query($conexao2, $resbairro);
+                        $row_obairro = mysqli_fetch_assoc($resultabairro);
+                        $nomebairro =$row_obairro['nome'];
+                        $valorbairro =$row_obairro['valor'];
                         ?>
                             <div class="content"> 
-                                    <div class="title is-5 has-text-weight-bold" >Entrega nº:<?php echo $identrega ?></div>  
+                                    <div class="title is-5 has-text-weight-bold" >Entrega nº:<?php echo $_GET[identrega] ?></div>  
                                 </div>
                                       <div class="content">
                                       <?php if ($prioridade2 == 'Aberta') { ?>
