@@ -48,7 +48,7 @@ include ('../login/verifica_login.php');
                             
                             <div class="container">
                                 <h1 class="title">
-                                    Implantações
+                                    Entregas
                                 </h1>
                               
                             </div>
@@ -67,15 +67,6 @@ include ('../login/verifica_login.php');
                         <input class="input is-info" type="search"  name="identrega"  list="identrega" >
                         <datalist id="identrega"> 
                             <option></option> 
-                            <?php
-                            $res_nomecliente = "SELECT * FROM entregas";
-                            $resultado_nomecliente = mysqli_query($conexao2, $res_nomecliente);
-                            while ($row_nomecliente = mysqli_fetch_assoc($resultado_nomecliente)) {
-                                ?>
-                                <option value="<?php echo $row_nomecliente['identrega']; ?>"><?php echo $row_nomecliente['identrega']; ?>                               
-                                </option> <?php
-                            }
-                            ?>
                         </datalist>
                     </div>
                     <div class="control">
