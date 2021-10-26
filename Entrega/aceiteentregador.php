@@ -145,19 +145,18 @@ include ('../login/verifica_login.php');
                                     <div class="title is-5 has-text-weight-bold">Valor Sugerido: </div> <div  class="title is-6 has-text-weight-light" >R$<?php echo $valorsugerido ?> </div>  
                                 </div>
                             
-                                <div class="content">
+                                
                                 <?php if ($status == 'Aberta') { ?>
+                                    <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
                                     <?php echo "<a class='tag is-success' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
                                 </div>
-                                 <?php }
+                                 <?php } ?>
                                 
-                         
-            
-                            
+                           
+                        
                         <br>
-                        <br>
-                     <?>
+                    
                      
                         </div>
                   
