@@ -35,9 +35,9 @@ include ('../login/verifica_login.php');
 
     <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <a class="navbar-brand" href="#">
+    <!--  <a class="navbar-brand" href="#">
        <img src="img/logo-systemway-transp.png" width="112" height="28" alt="">
-  </a>
+  </a> --> 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
