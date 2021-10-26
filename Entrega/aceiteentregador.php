@@ -48,8 +48,8 @@ include ('../login/verifica_login.php');
                             <h3 class="title has-text-grey">Aceite de Entregador</h3>    
                             </br>
                            
-            <form action="aceiteentregador.php#" method="GET">
-                <label class="label">Id Entrega</label>
+                            <form action="aceiteentregador.php#" method="GET">
+                <label class="label">Id Implantação</label>
                 <div class="field has-addons">
                     <div class="control">
                         <input class="input is-info" type="search"  name="identrega"  list="identrega" >
@@ -57,7 +57,7 @@ include ('../login/verifica_login.php');
                             <option></option> 
                             <?php
                             $res_nomecliente = "SELECT * FROM entregas";
-                            $resultado_nomecliente = mysqli_query($conexao2, $res_nomecliente);
+                            $resultado_nomecliente = mysqli_query($conexao, $res_nomecliente);
                             while ($row_nomecliente = mysqli_fetch_assoc($resultado_nomecliente)) {
                                 ?>
                                 <option value="<?php echo $row_nomecliente['identrega']; ?>"><?php echo $row_nomecliente['identrega']; ?>                               
@@ -67,96 +67,124 @@ include ('../login/verifica_login.php');
                         </datalist>
                     </div>
                     <div class="control">
-                        <button type="submit" class="button is-link is-rounded">Consultar entrega</button>
+                        <button type="submit" class="button is-link is-rounded">Consultar</button>
                     </div>
                 </div> 
             </form>
-
-            <section class="hero is-success is-fullheight">
-        
-                <div class="hero-body">
+            <div class="field">
+                <a class="has-text-link" href="escolheimp.php">Quer consultar pelo nome?</a>
+                            </div>
+        </div>
+            <br>                
+               
             <?php
-            if (isset($_GET['identrega'])) { 
-
-
-                $result_clioport = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
+            if (isset($_GET['identrega'])) {
                 
-                $resultado_oport = mysqli_query($conexao2, $result_clioport);
-                
+                $sql13 = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
+                $execut3 = mysqli_query($conexao2, $sql13);
                 
                  }
                 
-                if ($resultado_oport) {
-                    while ($rs3 = mysqli_fetch_assoc($resultado_oport)) {
-                        $idcliente = $rs3['idcliente'];
+                if ($execut3) {
+                    while ($rs3 = mysqli_fetch_assoc($execut3)) {
+                        $id1 = $rs3['identrega'];
+                        
+                        $idcli = $rs3['idcliente'];
+                          $sql190 = "select * FROM clientes WHERE idcliente = '$idcli'";
+                          $execut190 = mysqli_query($conexao, $sql190);
+                          while ($rs34 = mysqli_fetch_assoc($execut190)) {
+                          $cli1 = $rs34['nome'];
+                          $contato = $rs34['contato'];
+                         
+                        
+                        
                         $status = $rs3['status'];
+                        $logradouro = $rs3['logradouro'];
+                        $idbairro = $rs3['idbairro'];
+                            $sq777 = "select * FROM bairros WHERE idbairro = '$idbairro'";
+                            $exe679786 = mysqli_query($conexao2, $sq777);
+                            while ($rs1267763 = mysqli_fetch_assoc($exe679786)) {
+                            $nomebairro = $rs1267763['nome']; }
+
+                        $referencia = $rs3['referencia'];
                         $idestabelecimento = $rs3['idestabelecimento'];
-                        $dataehorapedida = $rs3['dataehorapedida'];
-
-                        $resuesta = "SELECT * FROM usuarios WHERE usuario_id = '$idestabelecimento'";
-                        $resuleta = mysqli_query($conexao2, $resuesta);
-                        $row_oporest = mysqli_fetch_assoc($resuleta);
-                        $nomeestabelecimento = $row_oporest['nome'];
-
-                        $resu = "SELECT * FROM clientes WHERE idcliente = '$idcliente'";
-                        $resulta = mysqli_query($conexao2, $resu);
-                        $row_oportusu = mysqli_fetch_assoc($resulta);
-                        $nomecliente = $row_oportusu['nome'];
-                        $contatocliente = $row_oportusu['contato'];
-                        $logradourocliente = $row_oportusu['logradouro'];
-                        $idbairrocliente = $row_oportusu['idbairro'];
-                        $referenciacliente = $row_oportusu['referencia'];
-
-                        $resbairro = "SELECT * FROM bairros WHERE idbairro = '$idbairrocliente'";
-                        $resultabairro = mysqli_query($conexao2, $resbairro);
-                        $row_obairro = mysqli_fetch_assoc($resultabairro);
-                        $nomebairro =$row_obairro['nome'];
-                        $valorbairro =$row_obairro['valor'];
+                            $sql128 = "select * FROM usuario WHERE usuario_id = '$idestabelecimento'";
+                            $exec35454 = mysqli_query($conexao2, $sql128);
+                            while ($rs12984 = mysqli_fetch_assoc($exec35454)) {
+                            $nomeestabelecimento = $rs12984['nome']; }
+                           
+                        $identregador =$rs3['identregador'];
+                            $sql434 = "select * FROM usuario WHERE usuario_id = '$idestabelecimento'";
+                            $exec566 = mysqli_query($conexao2, $sql434);
+                            while ($rs565 = mysqli_fetch_assoc($exec566)) {
+                            $nomeentregador = $rs565['nome']; }
+                        
+                       
+                    
+                
+                        
+                       
                         ?>
-                            <div class="content"> 
-                                    <div class="title is-5 has-text-weight-bold" >Entrega nº:<?php echo $_GET[identrega] ?></div>  
+              <div class="columns is-desktop">
+                              
+                              <div class="column">
+                                  
+                                  <div class="container">
+                                      <div class="hero-body">
+            <div id="oportunidade">
+                
+            <a class="title has-text-link">Dados</a>
+            </div>
+                                      <br>
+                                      <br>
+                                      <div class="content"> 
+                                    <div class="title is-5 has-text-weight-bold" >#<?php echo $id1 ?></div>  
                                 </div>
                                       <div class="content">
-                                      <?php if ($prioridade2 == 'Aberta') { ?>
+                                      <?php if ($status == 'Aberta') { ?>
                                <span class="tag is-success"><?php echo $status ?> </a>   </span>      
-                                <?php } elseif ($prioridade2 == 'Fechada' ) { ?>
+                                <?php } elseif ($status == 'Fechada' ) { ?>
                                 <span class="tag is-info"><?php echo $status ?> </a>   </span> 
-                                <?php } elseif ($prioridade2 == 'Cancelada' ) { ?>
+                                <?php } elseif ($status == 'Cancelada' ) { ?>
                                 <span class="tag is-danger"><?php echo $status ?> </a>   </span>
                                 <?php } ?>  </div>
                                      <div class="content">
-                                    <div class="title is-5 has-text-weight-bold"> Estabelecimento:</div>  
-                                    <div class="title is-6 has-text-weight-light" ><?php echo $nomeestabelecimento ?> </div>  
+                                    <div class="title is-5 has-text-weight-bold"> Estabelecimento que quer a entrega: <?php echo $idestabelecimento ?> </div>  
+                                    <div class="title is-6 has-text-weight-light" ><?php echo $cli1 ?> </div>  
                                 </div>
-      
-                    </div>
-                </div>         
-        </section>
-        <div class="container" > 
-        <section class="hero is-success is-fullheight">              
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-4 is-offset-4">
-                       
+                    <div class="content">
+                    <div class="title is-5 has-text-weight-bold"> Endereço da entrega: </div>  
+                <button type="button" class="button is-link is-outlined is-small"><?php echo $logradouro ?> - <?php echo $nomebairro ?> - <?php echo $referencia ?>  </button>
+                </div>                 
+                
+                
+                
+                 
+                                  
+          
+            
+
+                
+                 
+                                
                       
-                        
+                         
+            
+                            
                         <br>
                         <br>
-                        <div class="field">
-                            <input  type="submit" class="button is-link is-outlined is-rounded has-text-link" target="_blank" value="Aceitar corrida">
-
-                            </form>
+                     
+                        <?php
+                    }
+                }
+            }
+            
+            
+            ?>
                         </div>
-
                     </div>
-                </div>
-            </div>
-<?php } }  ?>
-        </div>
-    </div>
-</div>                        
-</section>
-
-</body>
-
+                  
+              </div>
+        
+    </body>
 </html>
