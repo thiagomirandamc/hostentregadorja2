@@ -43,13 +43,25 @@ include ('../login/verifica_login.php');
 
         
 
-                    <div class="container has-text-centered">
-                        <div class="column is-4 is-offset-4">
-                            <h3 class="title has-text-grey">Aceite de Entregador</h3>    
-                            </br>
-                           
-                            <form action="aceiteentregador.php#" method="GET">
-                <label class="label">Id Entrega</label>
+    <div class="hero is-info welcome is-small">
+                        <div class="hero-body">
+                            
+                            <div class="container">
+                                <h1 class="title">
+                                    Implantações
+                                </h1>
+                              
+                            </div>
+                        </div> 
+        </div>      
+        
+        <br>
+        <br>
+
+        <div class="column is-4 is-offset-4">
+
+            <form action="aceiteentregador.php" method="GET">
+                <label class="label">Cliente</label>
                 <div class="field has-addons">
                     <div class="control">
                         <input class="input is-info" type="search"  name="identrega"  list="identrega" >
@@ -71,103 +83,68 @@ include ('../login/verifica_login.php');
                     </div>
                 </div> 
             </form>
-            <div class="field">
-                <a class="has-text-link" href="escolheimp.php">Quer consultar pelo nome?</a>
-                            </div>
-        </div>
-            <br>                
+              
+            
+           
                
             <?php
             if (isset($_GET['identrega'])) {
-                
+               
                 $sql13 = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
-            }
+               
                 
-                if ($execut3) {
+                
+                
+                
+                
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
-                        $id1 = $rs3['identrega'];
-                        
-                        $idcli = $rs3['idcliente'];
-                          $sql190 = "select * FROM clientes WHERE idcliente = '$idcli'";
-                          $execut190 = mysqli_query($conexao2, $sql190);
-                          while ($rs34 = mysqli_fetch_assoc($execut190)) {
-                          $cli1 = $rs34['nome'];
-                          $contato = $rs34['contato'];
-                         
-                        
-                        
-                        $status = $rs3['status'];
-                        $logradouro = $rs3['logradouro'];
-                        $idbairro = $rs3['idbairro'];
-                            $sq777 = "select * FROM bairros WHERE idbairro = '$idbairro'";
-                            $exe679786 = mysqli_query($conexao2, $sq777);
-                            while ($rs1267763 = mysqli_fetch_assoc($exe679786)) {
-                            $nomebairro = $rs1267763['nome']; 
-
-                            }
-                        $referencia = $rs3['referencia'];
-                        $idestabelecimento = $rs3['idestabelecimento'];
-                            $sql128 = "select * FROM usuario WHERE usuario_id = '$idestabelecimento'";
-                            $exec35454 = mysqli_query($conexao2, $sql128);
-                            while ($rs12984 = mysqli_fetch_assoc($exec35454)) {
-                            $nomeestabelecimento = $rs12984['nome']; 
-                            }
-                           
-                        $identregador =$rs3['identregador'];
-                            $sql434 = "select * FROM usuario WHERE usuario_id = '$idestabelecimento'";
-                            $exec566 = mysqli_query($conexao2, $sql434);
-                            while ($rs565 = mysqli_fetch_assoc($exec566)) {
-                            $nomeentregador = $rs565['nome']; 
-                        
-                       
-                            }
-                
+                    $identrega = $rs3['identrega'];}
                         
                        
                         ?>
+             <div class="container">
+                                      <div class="hero-body">
+            <div id="oportunidade">
+                
+            <a class="title has-text-link">Entrega</a>
+            </div>
+                                      <br>
+                                      <br>
+         
+               <table class="table table-responsive is-fullwidth ">             
+                        <tbody>
+                            
+                            <td> <?php echo "<a class='has-text-black' href='showimplantacao.php?idimplantacao=" . $id1 . "'>" . $id1 . " - " . $_GET[identrega] ." - " . $sistema1 ."</a>";?></td>
+                                                                                         
+                                                         
+            <?php }  ?>                  
+                                                        
+                                                </tbody>
+                                            </table> 
             
-                              
-                           
-            <section class="hero is-success is-fullheight">
-           
-                <div class="hero-body">
-
-                    <div class="container has-text-centered">
-                        <div class="column is-4 is-offset-4">
-
-                        <div class="content">
-                <div class="title is-5 has-text-weight-bold">Id entrega:</div>  
-                <div class="title is-6 has-text-weight-light " >  <?php echo $_GET[identrega] ?> </div>
+                  
+                                                        
+                                                </tbody>
+                                            </table>  
                                 </div>
+               
+                  
+                            
 
-                            </div>
-                            </div>
-                            </div>
-                            </form>
-                            </section>
-                                      <br>
-                                      <br>
-                                      
+                                
+                      
+                         
+            
                             
                         <br>
                         <br>
                      
-                        <?php
-                                                  
-        }
-    }
-}
-
-            
-            ?>
+                     
                         </div>
                     </div>
-                  
-              </div>
-</div>
-
-
+             
+            
     </body>
 </html>
