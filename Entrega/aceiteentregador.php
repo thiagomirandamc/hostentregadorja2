@@ -83,7 +83,7 @@ include ('../login/verifica_login.php');
                 $sql13 = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
-                 }
+                 
                 
                 if ($execut3) {
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
@@ -182,7 +182,7 @@ include ('../login/verifica_login.php');
                         <br>
                      
                         <?php
-                    }
+                             } }
                 }
             }
         }
