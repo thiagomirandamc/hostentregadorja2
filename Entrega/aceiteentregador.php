@@ -98,8 +98,10 @@ $valorbairro =$row_obairro['valor'];
             </form>
             <?php
             if (isset($_GET['identrega'])) { 
+                
 
-                $result_clioport = "SELECT * FROM entregas WHERE identrega = '$_GET['identrega']'";
+                $result_clioport = "select * FROM emtregas WHERE identrega = '$_GET[identrega]'";
+                
                 $resultado_oport = mysqli_query($conexao2, $result_clioport);
                 
                 
