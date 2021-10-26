@@ -149,7 +149,7 @@ include ('../login/verifica_login.php');
                                 <?php if ($status == 'Aberta') { ?>
                                     <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
-                                    <?php echo "<a class='tag is-success is-big' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
+                                    <?php echo "<a class='button is-success' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
                                 </div>
                                  <?php } ?>
                                 
