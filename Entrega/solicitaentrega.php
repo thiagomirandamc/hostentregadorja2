@@ -86,7 +86,7 @@ include ('../login/verifica_login.php');
                                 <label id="nomeoportunidade" class="label">Nome Cliente</label>
                                 
 
-                                    <input class="input is-info" type="text"  name="nomecliente">
+                                    <input class="input is-info" type="text"  name="nomecliente" required>
                                 
                             </div>
                              <br>
@@ -95,7 +95,7 @@ include ('../login/verifica_login.php');
                                 <label id="contato" class="label">Contato dele(WhatsApp):</label>
                                 
 
-                                    <input class="input is-info" type="text"  name="contato">
+                                    <input class="input is-info" type="text"  name="contato" required>
                                 
                             </div>
                             <div class="field">
@@ -122,7 +122,7 @@ include ('../login/verifica_login.php');
                                 <label id="endereco" class="label">Logradouro, número , se tiver entre ruas:</label>
                                 
 
-                                    <input class="input is-info" type="text"  name="logradouro">
+                                    <input class="input is-info" type="text"  name="logradouro" required>
                                 
                             </div>
                         
@@ -149,7 +149,7 @@ include ('../login/verifica_login.php');
                                 <label id="referencia" class="label">Referência:</label>
                                 
 
-                                    <input class="input is-info" type="text"  name="referencia">
+                                    <input class="input is-info" type="text"  name="referencia" required>
                                 
                             </div>
                         
