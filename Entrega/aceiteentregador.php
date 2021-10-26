@@ -93,9 +93,21 @@ include ('../login/verifica_login.php');
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
                     $identrega = $rs3['identrega'];
                     $idestabelecimento = $rs3['idestabelecimento'];
+                        $resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
+                        $resuleta = mysqli_query($conexao2, $resuesta);
+                        $row_oporest = mysqli_fetch_assoc($resuleta);
+                        $nomeestabelecimento = $row_oporest['nome'];
+
                     $logradouro = $rs3['logradouro'];
-
-
+                    $idbairro = $rs3['idbairro'];
+                        $result_clioport2 = "SELECT * FROM bairros WHERE idbairro = '$idbairro'";
+                        $resultado_oport2 = mysqli_query($conexao2, $result_clioport2);
+                        $row_oportusuario2 = mysqli_fetch_assoc($resultado_oport2);
+                        $nomebairro = $row_oportusuario2['nome'];
+                        $valorsugerido = $row_oportusuario2['valor'];
+                    
+                    $referencia = $rs3['referencia'];
+                    $referencia = $rs3['dataehorapedida'];
                        
                      } ?>
              <div class="container">
@@ -103,20 +115,34 @@ include ('../login/verifica_login.php');
             <div id="oportunidade">
                 
             <a class="title has-text-link">Entrega</a>
+            <a class="title has-text-link">#<?php echo $identrega ?></a>
             </div>
                                       <br>
                                       <br>
+                                    
                                       <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Id da entrega: </div> <div   class="title is-6 has-text-weight-light" ><?php echo $identrega ?><</div>  
-                                </div>
+                                      <?php if ($status == 'Aberta') { ?>
+                               <span class="tag is-success"><?php echo $status ?> </a>   </span>      
+                                <?php } elseif ($status == 'Fechada' ) { ?>
+                                <span class="tag is-info"><?php echo $status ?> </a>   </span> 
+                                <?php } elseif ($status == 'Cancelada' ) { ?>
+                                <span class="tag is-danger"><?php echo $status ?> </a>   </span>
+                                <?php } ?>  </div>
+
                                 <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Estabelecimento: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $identrega ?></div>  
+                                    <div class="title is-5 has-text-weight-bold">Estabelecimento: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $nomeestabelecimento ?></div>  
                                 </div>
 
                                 <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?></div>  
+                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?> - <?php echo $nomebairro ?> </div>  
                                 </div>
-                  
+                                <div class="content">
+                                    <div class="title is-5 has-text-weight-bold">Referência: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $referencia ?> </div>  
+                                </div>
+
+                                <div class="content">
+                                    <div class="title is-5 has-text-weight-bold">Valor Sugerido: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $valorsugerido ?> </div>  
+                                </div>
                             
 
                                 
