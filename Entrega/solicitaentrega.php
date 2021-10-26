@@ -79,97 +79,83 @@ include ('../login/verifica_login.php');
                             <?php
                             $idestabelecimento = $_SESSION['usuario_id'];
                             ?>
-                            
-
                            <div class="field">  
 
-                                <label id="nomeoportunidade" class="label">Nome Cliente</label>
-                                
+<label id="endereco" class="label">Logradouro</label>
 
-                                    <input class="input is-info" type="text"  name="nomecliente" required>
-                                
-                            </div>
-                             <br>
-                            <div class="field">  
 
-                                <label id="contato" class="label">Contato dele(WhatsApp):</label>
-                                
+    <input class="input is-info" type="text"  name="logradouro" required>
 
-                                    <input class="input is-info" type="text"  name="contato" required>
-                                
-                            </div>
-                            <div class="field">
-                                <a class="has-text-link" href="cadastrocliente.php">Cliente já tem cadastro? Clique aqui.</a>
-                            </div>
-                            <br>
-                            <br>
-                            <br>
-                             <a href="#endereco" class="button is-link is-outlined is-rounded has-text-link smoothScroll">Próxima etapa >></a>
-                        
+</div>
+
+<div class="field">  
+
+<label id="numero" class="label">Número</label>
+
+
+    <input class="input is-info" type="text"  name="logradouro" required>
+
+</div>
+<div class="field">  
+
+<label id="complemento" class="label">Complemento</label>
+
+
+    <input class="input is-info" type="text"  name="complemento" required>
+
+</div>
+
+<div class="field">  
+<label class="label">Bairro</label>
+<div class="select is-info">
+ <select name="bairro">
+     <option></option>
+<?php
+$res_nomesistema3 = "SELECT * FROM bairros";
+    $resultado_nomesistema3 = mysqli_query($conexao2, $res_nomesistema3);
+    while ($row_nomesistema3 = mysqli_fetch_assoc($resultado_nomesistema3)) {
+        ?>
+       
+            <option><?php echo $row_nomesistema3['nome'];?></option>
+    <?php } ?>
+        </select>
+    </div>
+</div>
+
+
+<div class="field">  
+
+<label id="referencia" class="label">Referência:</label>
+
+
+    <input class="input is-info" type="text"  name="referencia" required>
+
+</div>
+
+<div class="field">  
+
+<label id="observacoes" class="label">Você deseja avisar o entregador de algo? *até 150 caracteres</label>
+
+
+    <input class="input is-info" type="text"  name="observacoes">
+
+</div>
+
+<br>
+<br>
+<div class="field">
+<input  type="submit" class="button is-link is-outlined is-rounded has-text-link" target="_blank" value=" Gerar entrega!">
+
+</form>
+</div>  
+
+                           
                         
       
                     </div>
                 </div>         
         </section>
-        <div id="sistemanumberone" class="container" > 
-        <section class="hero is-success is-fullheight">              
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-4 is-offset-4">
-                       
-                         <div class="field">  
-
-                                <label id="endereco" class="label">Logradouro, número , se tiver entre ruas:</label>
-                                
-
-                                    <input class="input is-info" type="text"  name="logradouro" required>
-                                
-                            </div>
-                        
-                         <div class="field">  
-                            <label class="label">Bairro</label>
-                            <div class="select is-info">
-                                 <select name="bairro">
-                                     <option></option>
-                                <?php
-                                $res_nomesistema3 = "SELECT * FROM bairros";
-                                    $resultado_nomesistema3 = mysqli_query($conexao2, $res_nomesistema3);
-                                    while ($row_nomesistema3 = mysqli_fetch_assoc($resultado_nomesistema3)) {
-                                        ?>
-                                       
-                                            <option><?php echo $row_nomesistema3['nome'];?></option>
-                                    <?php } ?>
-                                        </select>
-                                    </div>
-                        </div>
-                       
-
-                        <div class="field">  
-
-                                <label id="referencia" class="label">Referência:</label>
-                                
-
-                                    <input class="input is-info" type="text"  name="referencia" required>
-                                
-                            </div>
-                        
-                        <br>
-                        <br>
-                        <div class="field">
-                            <input  type="submit" class="button is-link is-outlined is-rounded has-text-link" target="_blank" value=" Gerar entrega!">
-
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>                        
-</section>
-
+        
 </body>
 
 </html>
