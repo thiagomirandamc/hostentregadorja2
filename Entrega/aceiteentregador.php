@@ -92,6 +92,7 @@ include ('../login/verifica_login.php');
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
                     $identrega = $rs3['identrega'];
+                    $status = $rs3['status'];
                     $idestabelecimento = $rs3['idestabelecimento'];
                         $resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
                         $resuleta = mysqli_query($conexao2, $resuesta);
@@ -107,7 +108,7 @@ include ('../login/verifica_login.php');
                         $valorsugerido = $row_oportusuario2['valor'];
                     
                     $referencia = $rs3['referencia'];
-                    $referencia = $rs3['dataehorapedida'];
+                    $dataehorapedida = $rs3['dataehorapedida'];
                        
                      } ?>
              <div class="container">
@@ -141,7 +142,7 @@ include ('../login/verifica_login.php');
                                 </div>
 
                                 <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Valor Sugerido: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $valorsugerido ?> </div>  
+                                    <div class="title is-5 has-text-weight-bold">Valor Sugerido: </div> <div  class="title is-6 has-text-weight-light" >R$<?php echo $valorsugerido ?> </div>  
                                 </div>
                             
 
