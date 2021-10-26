@@ -21,7 +21,7 @@ $nomeestabelecimento = $_SESSION['nome'];
 $resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
 $row_oporest = mysqli_fetch_assoc($resuleta);
- $idestabelecimento = $row_oportusuario2['usuario_id'];
+ $idestabelecimento = $row_oporest['usuario_id'];
 
 
 $bairro = $_POST['bairro'];
