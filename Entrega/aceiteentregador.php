@@ -91,10 +91,13 @@ include ('../login/verifica_login.php');
                 
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
-                    $identrega = $rs3['identrega'];}
-                        
+                    $identrega = $rs3['identrega'];
+                    $idestabelecimento = $rs3['idestabelecimento'];
+                    $logradouro = $rs3['logradouro'];
+
+
                        
-                        ?>
+                     } ?>
              <div class="container">
                                       <div class="hero-body">
             <div id="oportunidade">
@@ -103,24 +106,16 @@ include ('../login/verifica_login.php');
             </div>
                                       <br>
                                       <br>
-         
-               <table class="table table-responsive is-fullwidth ">             
-                        <tbody>
-                            
-                            <td> <?php echo "<a class='has-text-black' href='showimplantacao.php?idimplantacao=" . $id1 . "'>" . $id1 . " - " . $_GET[identrega] ." - " . $sistema1 ."</a>";?></td>
-                                                                                         
-                                                         
-            <?php }  ?>                  
-                                                        
-                                                </tbody>
-                                            </table> 
-            
-                  
-                                                        
-                                                </tbody>
-                                            </table>  
+                                      <div class="content">
+                                    <div class="title is-5 has-text-weight-bold">Id da entrega: </div> <div   class="title is-6 has-text-weight-light" ><?php echo $identrega ?><</div>  
                                 </div>
-               
+                                <div class="content">
+                                    <div class="title is-5 has-text-weight-bold">Estabelecimento: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $identrega ?></div>  
+                                </div>
+
+                                <div class="content">
+                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?></div>  
+                                </div>
                   
                             
 
@@ -134,8 +129,11 @@ include ('../login/verifica_login.php');
                      
                      
                         </div>
-                    </div>
-             
+                  
+                  </div>
+                <?php    }
+                
             
+         ?>
     </body>
 </html>
