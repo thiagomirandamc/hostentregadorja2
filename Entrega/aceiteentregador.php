@@ -65,7 +65,7 @@ $valorbairro =$row_obairro['valor'];
     <body>
 
         <section class="hero is-success is-fullheight">
-            <form action="solicitarentrega.php" method="POST">
+        
                 <div class="hero-body">
 
                     <div class="container has-text-centered">
@@ -98,9 +98,9 @@ $valorbairro =$row_obairro['valor'];
             </form>
             <?php
             if (isset($_GET['identrega'])) { 
-                
 
-                $result_clioport = "select * FROM emtregas WHERE identrega = '$_GET[identrega]'";
+
+                $result_clioport = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
                 
                 $resultado_oport = mysqli_query($conexao2, $result_clioport);
                 
