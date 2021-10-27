@@ -38,7 +38,7 @@ session_start();
                 <div class="column is-4 is-offset-4">
                 
                   
-                <h2 class="subtitle">Entrega solicitada!</h2>
+                <h3 class="title has-text-grey">Entrega realizada!</h3>   
 
                                 
                      
