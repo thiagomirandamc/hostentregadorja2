@@ -159,7 +159,7 @@ include ('../login/verifica_login.php');
                                 <?php if ($status == 'Aberta' || $permissaoestab == 's' ) { ?>
                                     <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Para cancelar a entrega: </div> 
-                                    <?php echo "<a class='button is-danger' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
+                                    <?php echo "<a class='button is-danger' href='fechaimplantacao.php?id=" . $id1 . "'>Cancelar entrega</a>";?>
                                 </div>
                                 
                                 <?php } if ($status == 'Aberta' || $permissaoentregador == 's' ) { ?>
