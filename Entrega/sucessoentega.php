@@ -38,12 +38,8 @@ session_start();
                 <div class="column is-4 is-offset-4">
                 
                   
-                <span class="icon-text has-text-success">
-                <span class="icon">
-                    <i class="fas fa-check-square"></i>
-                </span>
-                <span>Success</span>
-                </span>  
+                <p class="subtitle-color-success is-3">Entrega solicitada!</p>
+
                                 
                      
                 
