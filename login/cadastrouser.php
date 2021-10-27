@@ -28,8 +28,8 @@ session_start();
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-grey">Sistema de Cadastro de usuários</h3>
-                    <h3 class="title has-text-grey"><a href="https://youtube.com/canaltioficial" target="_blank">Canal TI</a></h3>
+                    
+                    <h3 class="title has-text-grey"><a  target="_blank">Entregador já</a></h3>
                     <?php
                     if($_SESSION['status_cadastro']):
                     ?>
@@ -52,7 +52,7 @@ session_start();
                     unset($_SESSION['usuario_existe']);
                     ?>
                     <div class="box">
-                        <form action="cadastrar.php" method="POST">
+                        <form action="cadastraruser.php" method="POST">
                             <div class="field">
                                 <div class="control">
                                     <input name="nome" type="text" class="input is-large" placeholder="Nome" autofocus>
