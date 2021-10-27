@@ -10,7 +10,7 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
  $permissaouser = $row_oporest['permissao'];
 
  
-$resuas = "SELECT * FROM permissao WHERE nome = '$permissaouser'";
+$resuas = "SELECT * FROM permissao WHERE idpermissao = '$permissaouser'";
 $resuasfg = mysqli_query($conexao2, $resuas);
 $row_opfxc = mysqli_fetch_assoc($resuasfg);
  $permissaoestab = $row_opfxc['estabelecimento'];
