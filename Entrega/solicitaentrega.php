@@ -3,6 +3,18 @@ include('../conexao2.php');
 session_cache_expire(18000);
 session_start();
 include ('../login/verifica_login.php');
+$nomesessao = $_SESSION['nome'];
+$resuesta = "SELECT * FROM usuario WHERE nome = '$nomesessao'";
+$resuleta = mysqli_query($conexao2, $resuesta);
+$row_oporest = mysqli_fetch_assoc($resuleta);
+ $permissaouser = $row_oporest['permissao'];
+
+ 
+$resuas = "SELECT * FROM permissao WHERE nome = '$permissaouser'";
+$resuasfg = mysqli_query($conexao2, $resuas);
+$row_opfxc = mysqli_fetch_assoc($resuasfg);
+ $permissaoestab = $row_opfxc['estabelecimento'];
+
 ?>
 <html>
     <head>    
@@ -71,6 +83,9 @@ include ('../login/verifica_login.php');
         <section class="hero is-success is-fullheight">
             <form action="solicitarentrega.php" method="POST">
                 <div class="hero-body">
+
+                <?php if ($permissaoestab == 's') { ?>
+                              
 
                     <div class="container has-text-centered">
                         <div class="column is-4 is-offset-4">
@@ -146,6 +161,10 @@ $res_nomesistema3 = "SELECT * FROM bairros";
 <div class="field">
 <input  type="submit" class="button is-link is-outlined is-rounded has-text-link" target="_blank" value=" Gerar entrega!">
 
+<?php }  elseif ($permissaoestab == 'n') { ?>
+
+    <label id="referencia" class="label">Você não tem permissão para essa página.</label>
+    <?php } ?>
 </form>
 </div>  
 
