@@ -37,9 +37,13 @@ session_start();
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                 
-                  
-                <h3 class="title has-text-grey">Entrega realizada!</h3>   
-
+                <a class="title has-text-link">Entrega solicitada :)</a>
+                <h3 class="title has-text-grey">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
+                    Se não receber, refaça a entrega.
+                </h3>   
+                <div class="content">
+                        <a href="../inicial.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Inicial</a>
+                    </div>
                                 
                      
                 
