@@ -32,7 +32,7 @@ if($row['total'] == 1) {
 	exit;
 }
 
-$sql = "INSERT INTO usuario (nome, usuario, idcooperativa, senha, data_cadastro, permissao, idquemcadastrou) VALUES ('$nome', '$usuario', '$idcooperativa', '$senha', NOW(), '$idpermissao', '$idusuario')";
+$sql = "INSERT INTO usuario (nome, status, usuario, idcooperativa, senha, data_cadastro, permissao, idquemcadastrou) VALUES ('$nome', '$status', '$usuario', '$idcooperativa', '$senha', NOW(), '$idpermissao', '$idusuario')";
 
 if($conexao2->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
