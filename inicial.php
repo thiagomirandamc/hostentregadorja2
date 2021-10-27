@@ -33,7 +33,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     <?php
                     if ($permissao == '1' || $setor == '4') { ?>
                     <div class="content">
-                        <a href="../solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Solicitar Entrega</a>
+                        <a href="../Entrega/solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Solicitar Entrega</a>
                     </div> 
                     <div class="content">
                         <a href="../solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Cancelar entrega</a>
