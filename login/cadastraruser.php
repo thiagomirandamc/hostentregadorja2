@@ -7,6 +7,7 @@ $nome = mysqli_real_escape_string($conexao2, trim($_POST['nome']));
 $usuario = mysqli_real_escape_string($conexao2, trim($_POST['usuario']));
 $senha = mysqli_real_escape_string($conexao2, trim(md5($_POST['senha'])));
 $nomepermissao = mysqli_real_escape_string($conexao2, trim($_POST['permissao']));
+$status = "Ativo";
 $resuesta = "SELECT * FROM permissao WHERE cargo = '$nomepermissao'";
 $resuleta = mysqli_query($conexao2, $resuesta);
 $row_oporest = mysqli_fetch_assoc($resuleta);
@@ -17,6 +18,7 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
 	$resuleta = mysqli_query($conexao2, $resuesta);
 	$row_oporest = mysqli_fetch_assoc($resuleta);
  	$idusuario = $row_oporest['usuario_id'];
+	$idcooperativa = $row_oporest['idcooperativa'];
 
 /* verificar se não já tem o usuario que quer cadastrar e bloquear*/
 $sql = "select count(*) as total from usuario where usuario = '$usuario'";
@@ -30,7 +32,7 @@ if($row['total'] == 1) {
 	exit;
 }
 
-$sql = "INSERT INTO usuario (nome, usuario, senha, data_cadastro, permissao, idquemcadastrou) VALUES ('$nome', '$usuario', '$senha', NOW(), '$idpermissao', '$idusuario')";
+$sql = "INSERT INTO usuario (nome, usuario, idcooperativa, senha, data_cadastro, permissao, idquemcadastrou) VALUES ('$nome', '$usuario', '$idcooperativa', '$senha', NOW(), '$idpermissao', '$idusuario')";
 
 if($conexao2->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
