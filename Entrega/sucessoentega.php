@@ -11,8 +11,24 @@ session_start();
     <title>Tela Inicial</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="../css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
-</head>
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
+        <script type="text/javascript" src="../jquery.min.js"></script>
+        <script type="text/javascript" src="../smoothscroll.js"></script>
+        <script type="text/javascript" src="../popper.min.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+   
+    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../personalizado.js"></script>
+        
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <body>
  
@@ -22,7 +38,7 @@ session_start();
                 <div class="column is-4 is-offset-4">
                 
                   
-                <span class="icon-text icon is-large has-text-success">
+                <span class="icon-text has-text-success">
                 <span class="icon">
                     <i class="fas fa-check-square"></i>
                 </span>
