@@ -38,7 +38,7 @@ session_start();
                 <div class="column is-4 is-offset-4">
                 
                   
-                <p class="subtitle-color-success is-3">Entrega solicitada!</p>
+                <p class="subtitle is-3">Entrega solicitada!</p>
 
                                 
                      
