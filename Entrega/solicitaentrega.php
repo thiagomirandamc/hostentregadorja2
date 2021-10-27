@@ -93,7 +93,7 @@ include ('../login/verifica_login.php');
 <label id="numero" class="label">Número</label>
 
 
-    <input class="input is-info" type="text"  name="logradouro" required>
+    <input class="input is-info" type="text"  name="numero" required>
 
 </div>
 <div class="field">  
