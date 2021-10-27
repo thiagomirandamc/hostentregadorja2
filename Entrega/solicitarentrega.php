@@ -25,6 +25,7 @@ $resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
 $row_oporest = mysqli_fetch_assoc($resuleta);
  $idestabelecimento = $row_oporest['usuario_id'];
+ $wppestabelecimento = $row_oporest['whatsapp'];
 
 
 $bairro = $_POST['bairro'];
@@ -53,7 +54,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
- CURLOPT_POSTFIELDS => "{\n\t\"number\": \"5591992932414\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"text\": \"*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento: $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações: $observacoes \\n. \\nEntregadores para aceitar, acessar o link abaixo \\ndev.systemwayautomacao.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
+ CURLOPT_POSTFIELDS => "{\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"contactId\": \"2f0864f1-80f8-454a-a83f-230314c3936b\",\n\t\"text\": \"*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento: $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações: $observacoes \\n. \\nEntregadores para aceitar, acessar o link abaixo \\ndev.systemwayautomacao.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"
@@ -64,6 +65,29 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
+
+$curls = curl_init();
+
+curl_setopt_array($curls, [
+  CURLOPT_URL => "https://systemwayautomacao-api.mandeumzap.com.br/v1/messages",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppestabelecimento\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\","
+    . "\n\t\"text\": \"*Confirmação de entrega* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento: $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações: $observacoes \\n. \\nSe você precisar consultar ou cancelar a entrega, acesse abaixo: \\ndev.systemwayautomacao.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
+  CURLOPT_HTTPHEADER => [
+    "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
+    "Content-Type: application/json"
+  ],
+]);
+
+$responses = curl_exec($curls);
+$errs = curl_error($curls);
+
+curl_close($curls);
 
 
 header('Location: solicitaentrega.php');
