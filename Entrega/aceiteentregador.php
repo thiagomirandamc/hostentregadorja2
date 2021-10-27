@@ -98,6 +98,15 @@ include ('../login/verifica_login.php');
                         $resuleta = mysqli_query($conexao2, $resuesta);
                         $row_oporest = mysqli_fetch_assoc($resuleta);
                         $nomeestabelecimento = $row_oporest['nome'];
+                        $permissao = $row_oporest['permissao'];
+                            $resuas = "SELECT * FROM permissao WHERE idpermissao = ' $permissao'";
+                            $resuasfg = mysqli_query($conexao2, $resuas);
+                            $row_opfxc = mysqli_fetch_assoc($resuasfg);
+                            $permissaoestab = $row_opfxc['estabelecimento'];
+                            $permissaomaster = $row_opfxc['master'];
+                            $permissaocooperado = $row_opfxc['cooperado'];
+                            $permissaoentregador = $row_opfxc['entregador'];
+
 
                     $logradouro = $rs3['logradouro'];
                     $idbairro = $rs3['idbairro'];
@@ -111,6 +120,8 @@ include ('../login/verifica_login.php');
                     $dataehorapedida = $rs3['dataehorapedida'];
                        
                      } ?>
+
+                  
              <div class="container">
                                       <div class="hero-body">
             <div id="oportunidade">
@@ -144,9 +155,14 @@ include ('../login/verifica_login.php');
                                 <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Valor Sugerido: </div> <div  class="title is-6 has-text-weight-light" >R$<?php echo $valorsugerido ?> </div>  
                                 </div>
-                            
                                 
-                                <?php if ($status == 'Aberta') { ?>
+                                <?php if ($status == 'Aberta' || $permissaoestab == 's' ) { ?>
+                                    <div class="content">
+                                    <div class="title is-5 has-text-weight-bold">Para cancelar a entrega: </div> 
+                                    <?php echo "<a class='button is-danger' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
+                                </div>
+                                
+                                <?php } if ($status == 'Aberta' || $permissaoentregador == 's' ) { ?>
                                     <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
                                     <?php echo "<a class='button is-success' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
