@@ -43,21 +43,15 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     <div class="content">
                         <a href="meupainel.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ver entregas</a>
                     </div>
-                    <div class="content">
-                        <a href="painelativimplist.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Implantação</a>
-                    </div>
-                    <div class="content">
-                        <a href="painelatividades.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Vendas</a>
-                    </div>
-                    <div class="content">
-                        <a href="carteira/showcarteira.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Carteira</a>
-                    </div>
                     <?php
-                    if ($setor == 'Financeiro' || $setor == 'Administrador') { ?>
+                    if ($permissao == '1' || $permissao == '2') { ?>
                     <div class="content">
                         <a href="cadastrosgerais/escolhecadgerais.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Cadastros Gerais</a>
                     </div>
-                      <?php } ?> 
+                    <?php } ?> 
+                    
+                   
+                     
                     </div>
                 </div>
             </div>
