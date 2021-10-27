@@ -98,8 +98,17 @@ include ('../login/verifica_login.php');
                         $resuleta = mysqli_query($conexao2, $resuesta);
                         $row_oporest = mysqli_fetch_assoc($resuleta);
                         $nomeestabelecimento = $row_oporest['nome'];
-                        $permissao = $row_oporest['permissao'];
-                            $resuas = "SELECT * FROM permissao WHERE idpermissao = ' $permissao'";
+                        
+                        $nomesessao = $_SESSION['nome'];
+                            $resasv = "SELECT * FROM usuario WHERE nome = '$nomesessao'";
+                            $rjkjk = mysqli_query($conexao2, $resasv);
+                            $row_ovbhgt = mysqli_fetch_assoc($rjkjk);
+                            $permissaouser = $row_ovbhgt['permissao'];
+                            
+                    
+                        
+
+                            $resuas = "SELECT * FROM permissao WHERE idpermissao = '$permissaouser'";
                             $resuasfg = mysqli_query($conexao2, $resuas);
                             $row_opfxc = mysqli_fetch_assoc($resuasfg);
                             $permissaoestab = $row_opfxc['estabelecimento'];
