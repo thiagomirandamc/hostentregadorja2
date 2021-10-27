@@ -20,7 +20,7 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
 
 /* verificar se não já tem o usuario que quer cadastrar e bloquear*/
 $sql = "select count(*) as total from usuario where usuario = '$usuario'";
-$result = mysqli_query($conexao, $sql);
+$result = mysqli_query($conexao2, $sql);
 $row = mysqli_fetch_assoc($result);
 
 /*se o banco retornar com 1 linha afetada, redireciona pro cliente fazer outro cadastro */
@@ -36,7 +36,7 @@ if($conexao2->query($sql) === TRUE) {
 	$_SESSION['status_cadastro'] = true;
 }
 
-$conexao->close();
+$conexao2->close();
 
 header('Location: cadastrouser.php');
 exit;
