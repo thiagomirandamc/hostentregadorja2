@@ -39,9 +39,9 @@ session_start();
                 
                 <a class="title has-text-link">Entrega solicitada :)</a>
                 <br>
-                <h4 class="subtitle is-4">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
+                <h3 class="title has-text-grey-light">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
                     Se não receber, refaça a entrega.
-                </h4>   
+                </h3>   
                 <div class="content">
                         <a href="../inicial.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ir para o inicial</a>
                     </div>
