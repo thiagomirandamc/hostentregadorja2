@@ -30,6 +30,7 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
     $resuestbc = mysqli_query($conexao2, $reestb);
     $row_estd = mysqli_fetch_assoc($resuestbc);
     $wppestabelecimento = $row_estd['whatsapp'];
+    $nomeestabelecimento = $row_estd['nome'];
   $logradouro = $row_opentreg['logradouro'];
   $numero = $row_opentreg['numero']; 
   $complemento = $row_opentreg['complemento'];
