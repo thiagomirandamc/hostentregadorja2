@@ -33,7 +33,12 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
   $logradouro = $row_opentreg['logradouro'];
   $numero = $row_opentreg['numero']; 
   $complemento = $row_opentreg['complemento'];
-  $idbairro = $row_opentreg['idbairro'];   
+  $idbairro = $row_opentreg['idbairro'];
+    $result_clioport2 = "SELECT * FROM bairros WHERE idbairro = '$idbairro'";
+    $resultado_oport2 = mysqli_query($conexao2, $result_clioport2);
+    $row_oportusuario2 = mysqli_fetch_assoc($resultado_oport2);
+    $bairro = $row_oportusuario2['nome'];
+     
 
   $referencia = $row_opentreg['referencia']; 
   $valor = $row_opentreg['valor']; 
