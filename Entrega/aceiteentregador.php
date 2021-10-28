@@ -195,7 +195,7 @@ include ('../login/verifica_login.php');
           <input name="identrega" class="input" type="hidden" value="<?php echo $identrega ;?>">
           
           
-          <label class="label">Confirma o aceite da entrega ID:<?php echo $identrega; ?> ? </label>                    
+          <label class="label">Confirma o aceite da entrega ID <?php echo $identrega; ?> ? </label>                    
                                         
                         
                     
