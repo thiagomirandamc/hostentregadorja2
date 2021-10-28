@@ -39,6 +39,8 @@ session_start();
                 
                 <a class="title has-text-link">Entrega solicitada :)</a>
                 <br>
+                <br>
+                <br>
                 <h3 class="title has-text-grey-light">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
                     Se não receber, refaça a entrega.
                 </h3>   
