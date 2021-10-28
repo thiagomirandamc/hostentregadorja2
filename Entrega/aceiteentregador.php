@@ -185,25 +185,25 @@ include ('../login/verifica_login.php');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Aceite de entrega</h5>
+        
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
            <form action="editaroportunidade.php" method="POST">
-          <input name="identrega" class="input" type="hidden" value="<?php echo $id1 ;?>">
+          <input name="identrega" class="input" type="hidden" value="<?php echo $identrega ;?>">
           
           
-          <label class="label">Confirma o aceite a entrega? </label>                    
+          <label class="label">Confirma o aceite da entrega ID:<?php echo $identrega; ?> ? </label>                    
                                         
                         
                     
       
            
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button  type="submit" class="button is-link" >Alterar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+               <button  type="submit" class="button is-success" >Confirmar</button>
             </form>
       </div>
   
