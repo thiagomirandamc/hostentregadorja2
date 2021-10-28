@@ -191,7 +191,7 @@ include ('../login/verifica_login.php');
         </button>
       </div>
       <div class="modal-body">
-           <form action="editaroportunidade.php" method="POST">
+           <form action="/entregadoraceitou/aceitandoentrega.php" method="POST">
           <input name="identrega" class="input" type="hidden" value="<?php echo $identrega ;?>">
           
           
