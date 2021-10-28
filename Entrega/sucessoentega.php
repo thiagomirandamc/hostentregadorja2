@@ -44,6 +44,8 @@ session_start();
                 <h3 class="title has-text-grey-light">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
                     Se não receber, refaça a entrega.
                 </h3>   
+                <br>
+                <br>
                 <div class="content">
                         <a href="../inicial.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ir para o inicial</a>
                     </div>
