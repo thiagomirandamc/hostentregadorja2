@@ -225,9 +225,9 @@ include ('../login/verifica_login.php');
                         </div>
                   
                   </div>
-                <?php    }
+            
                 
             
-         ?>
+        
     </body>
 </html>
