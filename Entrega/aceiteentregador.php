@@ -171,14 +171,53 @@ include ('../login/verifica_login.php');
                                     <?php echo "<a class='button is-danger' href='fechaimplantacao.php?id=" . $id1 . "'>Cancelar entrega</a>";?>
                                 </div>
                                 
-                                <?php } if ($status == 'Aberta' && $permissaoentregador == 's' ) { ?>
+                                
                                     <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
                                     <?php echo "<a class='button is-success' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
                                 </div>
                                  <?php } ?>
-                                
-                           
+                              
+                                 <?php } if ($status == 'Aberta' && $permissaoentregador == 's' ) { ?>
+                              <!-- Button trigger modal -->
+<button type="button" class="button is-rounded is-link is-outlined is-small" data-toggle="modal" data-target="#exampleModal">editar</button>
+<br>
+<br>
+<br>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Aceite de entrega</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+           <form action="editaroportunidade.php" method="POST">
+          <input name="idoportunidade" class="input" type="hidden" value="<?php echo $id1 ;?>">
+          
+          
+          <label class="label">Confirma o aceite a entrega? </label>                    
+                                        
+                        
+                    
+      
+           
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               <button  type="submit" class="button is-link" >Alterar</button>
+            </form>
+      </div>
+  
+ 
+</div>
+<?php } ?>
+    </div>
+  </div>
+    
+</div>
                         
                         <br>
                     
