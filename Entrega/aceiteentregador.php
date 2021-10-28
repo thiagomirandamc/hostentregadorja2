@@ -68,7 +68,7 @@ include ('../login/verifica_login.php');
      
       <div class="container">
       <li class="nav-item">
-      <a href="login/logout.php">Sair</a>
+      <a href="../login/logout.php">Sair</a>
       </li>
       </div>
     </ul>
