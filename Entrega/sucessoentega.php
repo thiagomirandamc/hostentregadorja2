@@ -38,11 +38,12 @@ session_start();
                 <div class="column is-4 is-offset-4">
                 
                 <a class="title has-text-link">Entrega solicitada :)</a>
-                <h3 class="title has-text-grey">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
+                <br>
+                <h4 class="subtitle is-4">Aguarde sua confirmação de entrega em até 1 minuto no WhatsApp.
                     Se não receber, refaça a entrega.
-                </h3>   
+                </h4>   
                 <div class="content">
-                        <a href="../inicial.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Inicial</a>
+                        <a href="../inicial.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ir para o inicial</a>
                     </div>
                                 
                      
