@@ -176,7 +176,7 @@ include ('../login/verifica_login.php');
                         <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
                                  </div>
                               <!-- Button trigger modal -->
-<button type="button" class="'button is-success" data-toggle="modal" data-target="#exampleModal">Aceitar Entrega</button>
+<button type="button" class="button is-success" data-toggle="modal" data-target="#exampleModal">Aceitar Entrega</button>
 <br>
 <br>
 <br>
