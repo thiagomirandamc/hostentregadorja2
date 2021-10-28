@@ -23,8 +23,8 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
 
  $identrega = $_POST['identrega'];
   $resent = "SELECT * FROM entregas WHERE identrega = '$identrega'";
-  $reentr = mysqli_query($conexao2, $reentr);
-  $row_opentreg = mysqli_fetch_assoc($resuleta);
+  $reentr = mysqli_query($conexao2, $resent);
+  $row_opentreg = mysqli_fetch_assoc($reentr);
   $idestabelecimento = $row_opentreg['idestabelecimento'];
     $reestb = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
     $resuestbc = mysqli_query($conexao2, $reestb);
