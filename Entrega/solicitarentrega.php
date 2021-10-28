@@ -90,7 +90,7 @@ $errs = curl_error($curls);
 curl_close($curls);
 
 
-header('Location: solicitaentrega.php');
+header('Location: sucessoentrega.php');
 
 
 $conexao->close(); 
