@@ -171,16 +171,12 @@ include ('../login/verifica_login.php');
                                     <?php echo "<a class='button is-danger' href='fechaimplantacao.php?id=" . $id1 . "'>Cancelar entrega</a>";?>
                                 </div>
                                 
-                                
-                                    <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
-                                    <?php echo "<a class='button is-success' href='fechaimplantacao.php?id=" . $id1 . "'>Aceitar entrega</a>";?>
-                                </div>
-                                 <?php } ?>
-                              
                                  <?php } if ($status == 'Aberta' && $permissaoentregador == 's' ) { ?>
+                                    <div class="content">
+                        <div class="title is-5 has-text-weight-bold">Para aceitar clique abaixo: </div> 
+                                 </div>
                               <!-- Button trigger modal -->
-<button type="button" class="button is-rounded is-link is-outlined is-small" data-toggle="modal" data-target="#exampleModal">editar</button>
+<button type="button" class="'button is-success" data-toggle="modal" data-target="#exampleModal">Aceitar Entrega</button>
 <br>
 <br>
 <br>
@@ -196,7 +192,7 @@ include ('../login/verifica_login.php');
       </div>
       <div class="modal-body">
            <form action="editaroportunidade.php" method="POST">
-          <input name="idoportunidade" class="input" type="hidden" value="<?php echo $id1 ;?>">
+          <input name="identrega" class="input" type="hidden" value="<?php echo $id1 ;?>">
           
           
           <label class="label">Confirma o aceite a entrega? </label>                    
@@ -213,7 +209,7 @@ include ('../login/verifica_login.php');
   
  
 </div>
-<?php } ?>
+<?php } } ?>
     </div>
   </div>
     
