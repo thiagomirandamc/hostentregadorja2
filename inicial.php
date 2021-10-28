@@ -75,7 +75,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     
                    <?php } ?> 
                     <div class="content">
-                        <a href="meupainel.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ver entregas</a>
+                        <a href="Entrega/aceiteentregador.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ver entregas</a>
                     </div>
                     <?php
                     if ($permissao == '1' || $permissao == '2') { ?>
