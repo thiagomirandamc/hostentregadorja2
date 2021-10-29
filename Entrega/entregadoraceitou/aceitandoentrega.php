@@ -26,6 +26,7 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
   $reentr = mysqli_query($conexao2, $resent);
   $row_opentreg = mysqli_fetch_assoc($reentr);
   $idestabelecimento = $row_opentreg['idestabelecimento'];
+  $status = $row_opentreg['status'];
     $reestb = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
     $resuestbc = mysqli_query($conexao2, $reestb);
     $row_estd = mysqli_fetch_assoc($resuestbc);
@@ -44,6 +45,8 @@ $row_oporest = mysqli_fetch_assoc($resuleta);
   $referencia = $row_opentreg['referencia']; 
   $valor = $row_opentreg['valor']; 
   $observacoes = $row_opentreg['observacoes']; 
+
+  if ($status == 'Aberta') { 
 
  $sql20 = "UPDATE entregas  SET identregador = '$identregador', status = 'Fechada', dataehoraaceite = NOW() WHERE identrega = '$identrega'";
 
@@ -99,7 +102,10 @@ curl_close($curls);
 
 
 header('Location: sucessoaceiteentregador.php');
-
+ 
+  } elseif ($status != 'Aberta' ) {
+    header('Location: entregajaaceita.php');
+  }
 
 $conexao->close(); 
 
