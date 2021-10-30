@@ -3,11 +3,6 @@ include('../conexao2.php');
 session_start();
 include ('../login/verifica_login.php');
 
-
-
-
-
-
 ?>
 <html>
     <head>    
@@ -15,7 +10,7 @@ include ('../login/verifica_login.php');
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Entregas por estabelecimento</title>
-        <<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="../css/bulma.min.css" >
         <link rel="stylesheet" type="text/css" href="../css/login.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -94,9 +89,16 @@ include ('../login/verifica_login.php');
                     </div>
                   </div>
                     <br>
-                    <label class="label">Dia.</label>
+                    <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" >
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</span>
+                  </div>
+                  <label class="label">Até:</label>
+                    <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
+							<input type="text" class="form-control" name="data2" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
