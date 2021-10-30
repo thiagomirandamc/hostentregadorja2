@@ -1,9 +1,10 @@
 <?php
 session_start();
 ?>
-<?php
-if(isset($_SESSION['nao_autenticado'])) {
-    ?>
+<?php if(isset($_SESSION['autenticado'])){
+     header('Location: inicial.php');
+} 
+?>
 <html>
     
 <head>
@@ -56,6 +57,4 @@ if(isset($_SESSION['nao_autenticado'])) {
     </section>
 </body>
 </html>
-<?php } else {
-     header('Location: inicial.php');
-} 
+
