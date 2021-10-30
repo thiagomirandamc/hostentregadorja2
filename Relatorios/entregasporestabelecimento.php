@@ -96,8 +96,9 @@ include ('../login/verifica_login.php');
                             <option></option> 
                         </datalist>
                     </div>
+                    <br>
                     <label class="label">Dia</label>
-                    <div class="input-group date data_formato" data-date-format="dd/mm/yyyy">
+                    <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
