@@ -26,13 +26,13 @@ include ('../login/verifica_login.php');
     
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../personalizado.js"></script>
         
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         
@@ -97,8 +97,12 @@ include ('../login/verifica_login.php');
                         </datalist>
                     </div>
                     <label class="label">Dia</label>
-                    <div class="container">
-                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                    <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
+							<input type="text" class="form-control" name="data" >
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</span>
+                  </div>
                         
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
@@ -146,7 +150,7 @@ include ('../login/verifica_login.php');
                 language: "pt-BR",
                 // startDate: '+0d'
 			});
-		</script>    
+		</script>
                 
             
         
