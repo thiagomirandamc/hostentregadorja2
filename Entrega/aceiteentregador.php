@@ -123,6 +123,7 @@ include ('../login/verifica_login.php');
                     $status = $rs3['status'];
                     $idestabelecimento = $rs3['idestabelecimento'];
                     $complemento = $rs3['complemento'];
+                    $numero = $rs3['numero'];
                         $resuesta = "SELECT * FROM usuario WHERE usuario_id = '$idestabelecimento'";
                         $resuleta = mysqli_query($conexao2, $resuesta);
                         $row_oporest = mysqli_fetch_assoc($resuleta);
@@ -184,7 +185,7 @@ include ('../login/verifica_login.php');
                                 </div>
 
                                 <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?> - <?php echo $nomebairro ?> </div>  
+                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega e número: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?>, <?php echo $numero ?> - <?php echo $nomebairro ?> </div>  
                                 </div>
                                 <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Complemento: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $complemento ?> </div>  
