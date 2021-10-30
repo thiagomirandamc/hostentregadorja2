@@ -86,7 +86,7 @@ include ('../login/verifica_login.php');
                         <datalist id="estabelecimento"> 
                             <option></option> 
                             <?php
-                            $res_estab = "SELECT * FROM usuarios WHERE permissao = 1 ";
+                            $res_estab = "SELECT * FROM usuarios";
                             $resultadestab = mysqli_query($conexao2, $res_estab);
                             while ($row_estabsas = mysqli_fetch_assoc($resultadestab)) {
                                 ?>
