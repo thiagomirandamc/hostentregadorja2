@@ -1,9 +1,10 @@
 <?php
 session_start();
 ?>
-<?php if(isset($_SESSION['autenticado'])){
-     header('Location: inicial.php');
-} 
+<?php if($_SESSION['nome']) {
+    header('Location: inicial.php');
+    exit();
+}
 ?>
 <html>
     
