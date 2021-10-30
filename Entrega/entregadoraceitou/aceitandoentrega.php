@@ -88,7 +88,7 @@ curl_setopt_array($curls, [
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppestabelecimento\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\","
-    . "\n\t\"text\": \"*O Entregador: $nomesessao aceitou sua entrega.* \\n*Entrega ID:* $identrega \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valor \\n*Observações:* $observacoes \\n. \\nSe você precisar consultar, acesse abaixo: \\ndev.systemwayautomacao.com.br/Entrega/aceiteentregador.php?identrega=$identrega  \"\n\t\n}",
+    . "\n\t\"text\": \"*O Entregador: $nomesessao aceitou sua entrega.* \\n*Entrega ID:* $identrega \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valor \\n*Observações:* $observacoes \\n. \\nSe você precisar consultar, acesse abaixo: \\nbenevides.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$identrega  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"
