@@ -25,6 +25,9 @@ $observacoes = $_POST['observacoes'];
 $referencia = $_POST['referencia'];
 $nomeestabelecimento = $_SESSION['nome'];
 
+if (isset($logradouro) && ($numero))  { 
+  
+
 
 $resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
 $resuleta = mysqli_query($conexao2, $resuesta);
@@ -59,7 +62,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
- CURLOPT_POSTFIELDS => "{\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"contactId\": \"2f0864f1-80f8-454a-a83f-230314c3936b\",\n\t\"text\": \"*Nova entrega!* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações:* $observacoes \\n. \\nEntregadores para aceitar, acessar o link abaixo \\n$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
+ CURLOPT_POSTFIELDS => "{\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\",\n\t\"contactId\": \"2f0864f1-80f8-454a-a83f-230314c3936b\",\n\t\"text\": \"*Entregador Já* \\n*Nova entrega!* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações:* $observacoes \\n. \\nEntregadores para aceitar, acessar o link abaixo \\n$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"
@@ -82,7 +85,7 @@ curl_setopt_array($curls, [
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppestabelecimento\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\","
-    . "\n\t\"text\": \"*Solicitação de entrega* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações:* $observacoes \\n. \\nSe você precisar consultar ou cancelar a entrega, acesse abaixo: \\n$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
+    . "\n\t\"text\": \"\"*Entregador Já* \\n*Solicitação de entrega!* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações:* $observacoes \\n. \\nSe você precisar consultar ou cancelar a entrega, acesse abaixo: \\n$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"
@@ -99,8 +102,11 @@ header('Location: sucessoentrega.php');
 
 
 $conexao->close(); 
-
-
 exit;
+
+
+} else {
+  header('Location: entregaseminformacoes.php');
+}
 
  ?>
