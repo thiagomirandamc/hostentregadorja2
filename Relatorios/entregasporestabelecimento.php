@@ -88,7 +88,7 @@ include ('../login/verifica_login.php');
                         </datalist>
                     </div>
                   </div>
-                    <br>
+                    
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" >
