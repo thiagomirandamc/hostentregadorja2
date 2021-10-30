@@ -185,7 +185,7 @@ include ('../login/verifica_login.php');
                                 </div>
 
                                 <div class="content">
-                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega e número: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?>, <?php echo $numero ?> - <?php echo $nomebairro ?> </div>  
+                                    <div class="title is-5 has-text-weight-bold">Endereço da entrega, número e bairro: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $logradouro ?>, <?php echo $numero ?> - <?php echo $nomebairro ?> </div>  
                                 </div>
                                 <div class="content">
                                     <div class="title is-5 has-text-weight-bold">Complemento: </div> <div  class="title is-6 has-text-weight-light" ><?php echo $complemento ?> </div>  
