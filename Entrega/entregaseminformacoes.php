@@ -38,7 +38,7 @@ session_start();
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                 
-                <a class="title has-text-link">Entrega sem as informações necessários :)</a>
+                <a class="title has-text-link">Entrega sem as informações necessárias.</a>
                 <br>
                 <br>
                 <br>
