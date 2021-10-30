@@ -82,9 +82,18 @@ include ('../login/verifica_login.php');
                 <label class="label">Estabelecimento</label>
                 <div class="field has-addons">
                     <div class="control">
-                        <input class="input is-info" type="search"  name="identrega"  list="identrega" >
-                        <datalist id="identrega"> 
+                        <input class="input is-info" type="search"  name="estabelecimento"  list="estabelecimento" >
+                        <datalist id="estabelecimento"> 
                             <option></option> 
+                            <?php
+                            $res_estab = "SELECT * FROM usuarios WHERE permissao = 1 ";
+                            $resultadestab = mysqli_query($conexao2, $res_estab);
+                            while ($row_estabsas = mysqli_fetch_assoc($resultadestab)) {
+                                ?>
+                                <option value="<?php echo $row_estabsas['nome']; ?>"><?php echo $row_estabsas['nome']; ?>                               
+                                </option> <?php
+                            }
+                            ?>
                         </datalist>
                     </div>
                   </div>
@@ -103,7 +112,7 @@ include ('../login/verifica_login.php');
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
                   </div>
-                        
+                       <br> 
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
                     </div>
