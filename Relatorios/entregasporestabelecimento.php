@@ -96,7 +96,7 @@ include ('../login/verifica_login.php');
                             ?>
                         </datalist>
                     </div>
-                  </div>
+                  
                    &nbsp 
                   <label class="label">Status:</label>
                           <div class="select is-info">
@@ -107,6 +107,7 @@ include ('../login/verifica_login.php');
                               <option>Fechada</option>
                                   </select>
                               </div> 
+                          </div>      
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" >
