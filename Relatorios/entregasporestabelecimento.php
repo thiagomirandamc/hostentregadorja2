@@ -3,8 +3,8 @@ include('../conexao2.php');
 session_start();
 include ('../login/verifica_login.php');
 
-$estabelecimentopesq = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); 
-$statuspesq = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_NUMBER_INT);
+$estabelecimentopesq = filter_input(INPUT_GET, 'estabelecimento', FILTER_SANITIZE_STRING); 
+$statuspesq = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_STRING);
   
 
 ?>
