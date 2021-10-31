@@ -146,6 +146,7 @@ include ('../login/verifica_login.php');
                     $logradouro = $rs3['logradouro'];
                     $numero = $rs3['numero'];
                    ?>
+                   <?php } ?>
                     <div class="columns is-desktop">
                               
                     <div class="column">
@@ -160,7 +161,7 @@ include ('../login/verifica_login.php');
                             <br>
                             <div class="content"> 
                           <div class="title is-5 has-text-weight-bold" >#<?php echo $id1 ?></div>  
-                      </div>  <?php  } }  ?>
+                      </div>  <?php   }  ?>
     </div>
   </div>
     
