@@ -184,7 +184,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                                 </tbody>
                                             </table>
                                             
-                                            <?php } } } ?>
+                                            <?php  } } ?>
     </div>
   </div>
     
