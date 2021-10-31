@@ -160,12 +160,7 @@ include ('../login/verifica_login.php');
 
 </tr>
 </thead>
-                   <tbody>
-                       
-                  
-                                                 
-                                                  
-                                          <tr>      
+<tbody>                 
                <?php
                 $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento'";
                 $execut3 = mysqli_query($conexao2, $sql13);
@@ -177,7 +172,12 @@ include ('../login/verifica_login.php');
                     $identregador = $rs3['identregador'];
                     $valor = $rs3['valor'];
                    ?>
+                   
+                       
                   
+                                                 
+                                                  
+                       <tr>     
                     
                                                <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
                                                 <?php
