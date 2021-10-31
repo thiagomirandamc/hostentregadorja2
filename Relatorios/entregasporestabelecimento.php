@@ -163,6 +163,15 @@ include ('../login/verifica_login.php');
                            
                             <table class="table table-responsive is-fullwidth ">  
 <br>           
+<thead>
+    <tr>
+      <th><abbr title="ID">ID</abbr></th>
+      <th><abbr title="Entregador">Entregador</abbr></th>
+      <th>Logradouro</th>
+      <th><abbr title="Valor">R$</abbr></th>
+
+    </tr>
+  </thead>
                         <tbody>
                             
                        
