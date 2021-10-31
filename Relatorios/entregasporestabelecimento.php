@@ -134,15 +134,33 @@ include ('../login/verifica_login.php');
            
                
             <?php
-            if (isset($_GET['identrega'])) {
+            if (isset($_GET['estabelecimento']) && ($_GET['estabelecimento'])) {
+
+             
                
                 $sql13 = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
                     $identrega = $rs3['identrega'];
-                   
-                            } }  ?>
+                    $logradouro = $rs3['logradouro'];
+                    $numero = $rs3['numero'];
+                   ?>
+                    <div class="columns is-desktop">
+                              
+                    <div class="column">
+                        
+                        <div class="container">
+                            <div class="hero-body">
+  <div id="oportunidade">
+      
+  <a class="title has-text-link">Dados</a>
+  </div>
+                            <br>
+                            <br>
+                            <div class="content"> 
+                          <div class="title is-5 has-text-weight-bold" >#<?php echo $id1 ?></div>  
+                      </div>  <?php  } }  ?>
     </div>
   </div>
     
