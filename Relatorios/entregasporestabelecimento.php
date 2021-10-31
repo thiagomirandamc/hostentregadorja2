@@ -197,6 +197,10 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                     $identregador = $rs3['identregador'];
                     $valor = $rs3['valor'];
                     $status = $rs3['status'];
+                    $dataehorapedida = $rs3['dataehorapedida'];
+                    $dateehorped = strtotime($dataehorapedida);
+                                    
+
                    ?>
                    
                          
@@ -210,6 +214,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                                 <span class="tag is-danger"><?php echo $status ?> </a>   </span>
                                 <?php } ?> </td>
                                                <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
+                                               <td><a class="has-text-black">Data e hora pedida <?php echo date('d/m/y H:i', $dateehorpedok) ?></a></td>  
                                                 <?php
                                                 
  $result_clioport1sj = "SELECT * FROM usuario WHERE usuario_id = '$identregador'";
