@@ -144,6 +144,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
             if (isset($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) {
 
               $nomeestabelecimento = $_GET['estabelecimento'];
+              $status = ($_GET['status']);
               $de = $_GET['data'];
               
                   $de = explode(" ", $de);
@@ -184,7 +185,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 </tr>
 </thead>
 <tfoot>
-<?php  $sql45j = "SELECT COUNT(valor)as total450 FROM entregas WHERE  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+<?php  $sql45j = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
                                     $exc45j = mysqli_query($conexao2, $sql45j);
                                     $row45j = mysqli_fetch_assoc($exc45j);
                                     $valorperiodo = $row45j['total450'];     
