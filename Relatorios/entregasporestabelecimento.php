@@ -183,6 +183,14 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 
 </tr>
 </thead>
+<tfoot>
+    <tr>
+      <th><abbr title="Totais"></abbr></th>
+      <th><abbr title=""></abbr></th>
+      <th><abbr title=""></abbr></th>
+      <th><abbr title="Valor Total"><?php echo $valorperiodo ?> </abbr></th>
+    </tr>
+  </tfoot>
 <tbody>                 
                <?php
                 $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
@@ -196,7 +204,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                     $valor = $rs3['valor'];
                    ?>
                    
-                 <?php  $sql45j = "SELECT COUNT(valor)as total450 FROM entregas WHERE dataehorapedida = '$data_sem_barra1' AND dataehorapedida = '$data_sem_barra2'";
+                 <?php  $sql45j = "SELECT COUNT(valor)as total450 FROM entregas WHERE  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
                                     $exc45j = mysqli_query($conexao, $sql45j);
                                     $row45j = mysqli_fetch_assoc($exc45j);
                                     $valorperiodo = $row45j['total450'];     
