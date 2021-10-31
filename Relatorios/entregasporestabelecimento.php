@@ -5,6 +5,8 @@ include ('../login/verifica_login.php');
 
 $estabelecimentopesq = filter_input(INPUT_GET, 'estabelecimento', FILTER_SANITIZE_STRING); 
 $statuspesq = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_STRING);
+$depesq = filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING);
+$parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
   
 
 ?>
