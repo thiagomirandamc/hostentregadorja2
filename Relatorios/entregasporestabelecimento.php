@@ -182,7 +182,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
   </figure></td>
                                                  <td>
                                                  <td><a class="has-text-black"><?php echo $logradouro ?></a></td>
-</td>                                             <td><a class="has-text-black"><?php echo $valor ?></a></td>
+</td>                                             <td><a class="has-text-black">R$<?php echo $valor ?></a></td>
                                               
                                                 </tbody>
                                             </table>
