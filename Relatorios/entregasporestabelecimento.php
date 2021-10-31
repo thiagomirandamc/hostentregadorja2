@@ -137,10 +137,26 @@ include ('../login/verifica_login.php');
             if (isset($_GET['estabelecimento']) && ($_GET['status'])) {
 
               $nomeestabelecimento = $_GET['estabelecimento'];
+              $de = $_GET['data'];
+              
+                  $de = explode(" ", $dataatividade1);
+                  list($date1, $hora1) = $dataatividade1;
+                  $data_sem_barra1 = array_reverse(explode("/", $date1));
+                  $data_sem_barra1 = implode("-", $data_sem_barra1);
+                  $data_sem_barra1 = $data_sem_barra1 . " " . $hora1;
+
+              $para = $_GET['data2'];
+
+                  $para = explode(" ", $dataatividade2);
+                  list($date2, $hora2) = $dataatividade2;
+                  $data_sem_barra2 = array_reverse(explode("/", $date2));
+                  $data_sem_barra2 = implode("-", $data_sem_barra2);
+                  $data_sem_barra2 = $data_sem_barra2 . " " . $hora2;
+
               $resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
               $resuleta = mysqli_query($conexao2, $resuesta);
               $row_oporest = mysqli_fetch_assoc($resuleta);
-               $idestabelecimento = $row_oporest['usuario_id'];
+              $idestabelecimento = $row_oporest['usuario_id'];
                
             ?>   <div class="columns is-desktop">
                               
@@ -148,7 +164,7 @@ include ('../login/verifica_login.php');
                    
                    <div class="container">
                        <div class="hero-body">
-                      
+                       <td><a class="has-text-black">Relatório de <?php echo $data_sem_barra1 ?> a <?php echo $data_sem_barra2 ?> </a></td> 
                        <table class="table table-responsive is-fullwidth ">  
 <br>           
 <thead>
@@ -173,9 +189,12 @@ include ('../login/verifica_login.php');
                     $valor = $rs3['valor'];
                    ?>
                    
-                       
+                 <?php  $sql45j = "SELECT COUNT(valor)as total450 FROM entregas WHERE dataehorapedida = '$data_sem_barra1' AND dataehorapedida = '$data_sem_barra2'";
+                                    $exc45j = mysqli_query($conexao, $sql45j);
+                                    $row45j = mysqli_fetch_assoc($exc45j);
+                                    $valorperiodo = $row45j['total450'];     
                   
-                                                 
+                                    ?>             
                                                   
                        <tr>     
                     
