@@ -79,7 +79,7 @@ include ('../login/verifica_login.php');
         <div class="column is-4 is-offset-4">
 
             <form action="aceiteentregador.php" method="GET">
-                <label class="label">Estabelecimento</label> &nbsp <label class="label">Status:</label>
+                <label class="label">Estabelecimento</label>
                 <div class="field has-addons">
                     <div class="control">
                         <input class="input is-info" type="search"  name="estabelecimento"  list="estabelecimento" >
@@ -95,9 +95,8 @@ include ('../login/verifica_login.php');
                             }
                             ?>
                         </datalist>
-                    </div>
-                  
-                   
+                   &nbsp 
+                  <label class="label">Status:</label>
                           <div class="select is-info">
                           <select name="status">
                               <option></option>
@@ -106,7 +105,8 @@ include ('../login/verifica_login.php');
                               <option>Fechada</option>
                                   </select>
                               </div> 
-                          </div>      
+                          </div>     
+                          </div> 
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" >
