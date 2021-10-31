@@ -3,6 +3,10 @@ include('../conexao2.php');
 session_start();
 include ('../login/verifica_login.php');
 
+$estabelecimentopesq = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); 
+$statuspesq = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_NUMBER_INT);
+  
+
 ?>
 <html>
     <head>    
@@ -84,7 +88,7 @@ include ('../login/verifica_login.php');
                     <div class="control">
                         <input class="input is-info" type="search"  name="estabelecimento"  list="estabelecimento" >
                         <datalist id="estabelecimento"> 
-                            <option></option> 
+                            <option><?php echo $estabelecimentopesq ?></option> 
                             <?php
                             $res_estab = "SELECT * FROM usuario WHERE permissao = 4";
                             $resultadestab = mysqli_query($conexao2, $res_estab);
@@ -99,7 +103,7 @@ include ('../login/verifica_login.php');
                   <label class="label">Status:</label>
                           <div class="select is-info">
                           <select name="status">
-                              <option></option>
+                              <option><?php echo $statuspesq ?></option>
                               <option>Aberta</option>
                               <option>Cancelada</option>
                               <option>Fechada</option>
