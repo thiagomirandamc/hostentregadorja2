@@ -179,6 +179,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 <tr>
 <th><abbr title="Status">Status</abbr></th>
  <th><abbr title="ID">ID</abbr></th>
+ <th><abbr title="Data e hora pedida">D/H</abbr></th>
  <th><abbr title="Entregador">Ent.</abbr></th>
  <th><abbr title="Logradouro">Logradouro</abbr></th>
  <th><abbr title="Valor">R$</abbr></th>
