@@ -195,12 +195,19 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                     $numero = $rs3['numero'];
                     $identregador = $rs3['identregador'];
                     $valor = $rs3['valor'];
+                    $status = $rs3['status'];
                    ?>
                    
                          
                                                   
                        <tr>     
-                    
+                    <td> <?php if ($status == 'Aberta') { ?>
+                               <span class="tag is-primary"><?php echo $status ?> </a>   </span>      
+                                <?php } elseif ($status == 'Fechada' ) { ?>
+                                <span class="tag is-info"><?php echo $status ?> </a>   </span> 
+                                <?php } elseif ($status == 'Cancelada' ) { ?>
+                                <span class="tag is-danger"><?php echo $status ?> </a>   </span>
+                                <?php } ?> </td>
                                                <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
                                                 <?php
                                                 
@@ -232,7 +239,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                     $entregasperiodo = $rodfdf ['total450']; 
                   
                                     ?>
-                                    <label class="label">Establecimento: <?php echo $nomeestabelecimento ?> </label> 
+                                    <label class="label">Estabelecimento: <?php echo $nomeestabelecimento ?> </label> 
                                     <label class="label">Período: De <?php echo $data_sem_barra1 ?> até <?php echo $data_sem_barra2 ?>  </label>    
                                     <label class="label">Total de entregas: <?php echo $entregasperiodo ?> </label>
                                     <label class="label">Valor Total: R$ <?php echo $valorperiodo ?> </label>
