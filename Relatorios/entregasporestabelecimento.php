@@ -166,7 +166,7 @@ include ('../login/verifica_login.php');
 <thead>
     <tr>
       <th><abbr title="ID">ID</abbr></th>
-      <th><abbr title="Entregador">Entregador</abbr></th>
+      <th><abbr title="Entregador">Ent.</abbr></th>
       <th>Logradouro</th>
       <th><abbr title="Valor">R$</abbr></th>
 
