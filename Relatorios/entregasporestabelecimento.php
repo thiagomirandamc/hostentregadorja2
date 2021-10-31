@@ -225,9 +225,16 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                     $exc45j = mysqli_query($conexao2, $sql45j);
                                     $row45j = mysqli_fetch_assoc($exc45j);
                                     $valorperiodo = $row45j['total450'];     
+
+                                      $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                    $exsdsd = mysqli_query($conexao2, $sql4gh);
+                                    $rodfdf = mysqli_fetch_assoc($exsdsd);
+                                    $entregasperiodo = $rodfdf ['total450']; 
                   
-                                    ?>    
-                                    <label class="label">Total deentregas: </label>
+                                    ?>
+                                    <label class="label">Establecimento: <?php echo $nomeestabelecimento ?> </label> 
+                                    <label class="label">Período: De <?php echo $data_sem_barra1 ?> até <?php echo $data_sem_barra2 ?>  </label>    
+                                    <label class="label">Total de entregas: <?php echo $entregasperiodo ?> </label>
                                     <label class="label">Valor Total: R$ <?php echo $valorperiodo ?> </label>
                                     
                                             <?php   
