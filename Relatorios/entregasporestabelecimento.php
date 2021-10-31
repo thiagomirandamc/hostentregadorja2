@@ -97,7 +97,7 @@ include ('../login/verifica_login.php');
                         </datalist>
                     </div>
                   </div>
-                 <?php &nbsp ?>
+                   &nbsp 
                   <label class="label">Status:</label>
                           <div class="select is-info">
                           <select name="status">
