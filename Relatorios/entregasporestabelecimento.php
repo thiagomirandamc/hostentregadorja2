@@ -134,7 +134,7 @@ include ('../login/verifica_login.php');
            
                
             <?php
-            if (isset($_GET['estabelecimento']) && ($_GET['estabelecimento'])) {
+            if (isset($_GET['estabelecimento']) && ($_GET['status'])) {
 
              
                
