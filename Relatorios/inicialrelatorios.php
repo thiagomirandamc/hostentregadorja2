@@ -1,6 +1,6 @@
 <?php
 include("conexao2.php");
-include ('login/verifica_login.php');
+include ('verifica_login.php');
 session_start();
 ?>
 <html>
@@ -14,10 +14,10 @@ session_start();
    
         <link rel="stylesheet" href="../css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/login.css">
-        <script type="text/javascript" src="../jquery.min.js"></script>
-        <script type="text/javascript" src="../smoothscroll.js"></script>
-        <script type="text/javascript" src="../popper.min.js"></script>
-        <link rel="stylesheet" href="../css/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="smoothscroll.js"></script>
+        <script type="text/javascript" src="popper.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-4.4.1-dist/css/bootstrap.min.css">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -61,7 +61,7 @@ session_start();
      
       <div class="container">
       <li class="nav-item">
-      <a href="login/logout.php">Sair</a>
+      <a href="../login/logout.php">Sair</a>
       </li>
       </div>
     </ul>
@@ -83,27 +83,15 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
              $permissao = $rspl['permissao']; } }    ?>                
                     
                     <?php
-                    if ($permissao == '1' || $setor == '4') { ?>
+                    if ($permissao == '1' || $setor == '2') { ?>
                     <div class="content">
-                        <a href="../Entrega/solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Solicitar Entrega</a>
+                        <a href="entregasporesbelecimento.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Relatório por Estabelecimento</a>
                     </div> 
-                    <div class="content">
-                        <a href="../solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Cancelar entrega</a>
-                    </div>
-                    
                    <?php } ?> 
-                    <div class="content">
-                        <a href="Entrega/aceiteentregador.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Ver entregas</a>
-                    </div>
-                    <div class="content">
-                        <a href="Relatorios/.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Relatórios</a>
-                    </div>
-                    <?php
-                    if ($permissao == '1' || $permissao == '2') { ?>
-                    <div class="content">
-                        <a href="cadastrosgerais/escolhecadgerais.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Cadastros Gerais</a>
-                    </div>
-                    <?php } ?> 
+                   <div class="content">
+                        <a href="../inicial.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Voltar</a>
+                    </div> 
+                    
                     
                    
                      
