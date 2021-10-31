@@ -78,7 +78,7 @@ include ('../login/verifica_login.php');
 
         <div class="column is-4 is-offset-4">
 
-            <form action="aceiteentregador.php" method="GET">
+            <form action="entregasporestabelecimento.php" method="GET">
                 <label class="label">Estabelecimento</label>
                 <div class="field has-addons">
                     <div class="control">
