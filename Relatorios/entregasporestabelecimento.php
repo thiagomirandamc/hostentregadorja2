@@ -166,6 +166,7 @@ include ('../login/verifica_login.php');
 <thead>
     <tr>
       <th><abbr title="ID">ID</abbr></th>
+      <th><abbr title="Entregador">Ent.</abbr></th>
       <th><abbr title="Logradouro">Logradouro</abbr></th>
       <th><abbr title="Valor">R$</abbr></th>
 
@@ -190,7 +191,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
   <figure class="image is-24x24">
   <img class="is-rounded" title="<?php echo $nomeentregador ?>" src="<?php echo $linkfotoj ?>">
   </figure></td>
-                                                 <td>
+                                                 
                                                  <td><a class="has-text-black"><?php echo $logradouro ?></a></td>
 </td>                                             <td><a class="has-text-black">R$<?php echo $valor ?></a></td>
                                               
