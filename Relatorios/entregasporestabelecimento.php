@@ -172,7 +172,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                    
                    <div class="container">
                        <div class="hero-body">
-                       <td><a class="has-text-black">Relatório de <?php echo $data_sem_barra1 ?> a <?php echo $data_sem_barra2 ?> </a></td> 
+                       
                        <table class="table table-responsive is-fullwidth ">  
 <br>           
 <thead>
