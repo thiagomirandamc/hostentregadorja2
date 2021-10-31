@@ -178,7 +178,7 @@ include ('../login/verifica_login.php');
 </thead>
 <tbody>                 
                <?php
-                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida = '$data_sem_barra1' AND dataehorapedida = '$data_sem_barra2' ";
+                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
