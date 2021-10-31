@@ -195,6 +195,12 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                     $identrega = $rs3['identrega'];
                     $logradouro = $rs3['logradouro'];
                     $numero = $rs3['numero'];
+                    $idbairro = $rs3['idbairro'];
+                        $result_clioport2 = "SELECT * FROM bairros WHERE idbairro = '$idbairro'";
+                        $resultado_oport2 = mysqli_query($conexao2, $result_clioport2);
+                        $row_oportusuario2 = mysqli_fetch_assoc($resultado_oport2);
+                        $nomebairro = $row_oportusuario2['nome'];
+                        
                     $identregador = $rs3['identregador'];
                     $valor = $rs3['valor'];
                     $status = $rs3['status'];
@@ -231,7 +237,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                                <td><a class="has-text-black"><?php echo date('d/m/y H:i', $dateehorped) ?></a></td>  
                                                 
                                                  
-                                                 <td><a class="has-text-black"><?php echo $logradouro ?></a></td>
+                                                 <td><a class="has-text-black"><?php echo $logradouro ?>, <?php echo $numero ?> - <?php echo $nomebairro ?> </a></td>
 </td>                                             <td><a class="has-text-black">R$<?php echo $valor ?></a></td>
                                               <?php } ?>
                                                 </tbody>
