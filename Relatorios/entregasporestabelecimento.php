@@ -115,14 +115,14 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                           </div> 
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
-							<input type="text" class="form-control" name="data" >
+							<input type="text" class="form-control" name="data" value="<?php echo $depesq ?>" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
                   </div>
                   <label class="label">Até:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
-							<input type="text" class="form-control" name="data2" >
+							<input type="text" class="form-control" name="data2" value="<?php echo $parapesq ?>" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
