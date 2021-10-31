@@ -178,9 +178,9 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 <thead>
 <tr>
 <th><abbr title="Status">Status</abbr></th>
+<th><abbr title="Entregador">Ent.</abbr></th>
  <th><abbr title="ID">ID</abbr></th>
- <th><abbr title="Data e hora pedida">D/H</abbr></th>
- <th><abbr title="Entregador">Ent.</abbr></th>
+ <th><abbr title="Data e hora pedida">Data e Hora</abbr></th>
  <th><abbr title="Logradouro">Logradouro</abbr></th>
  <th><abbr title="Valor">R$</abbr></th>
 
@@ -214,9 +214,8 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                                 <?php } elseif ($status == 'Cancelada' ) { ?>
                                 <span class="tag is-danger"><?php echo $status ?> </a>   </span>
                                 <?php } ?> </td>
-                                               <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
-                                               <td><a class="has-text-black"><?php echo date('d/m/y H:i', $dateehorped) ?></a></td>  
-                                                <?php
+
+                                <?php
                                                 
  $result_clioport1sj = "SELECT * FROM usuario WHERE usuario_id = '$identregador'";
 $resultado_oport1sj = mysqli_query($conexao2, $result_clioport1sj);
@@ -228,6 +227,9 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
   <figure class="image is-24x24">
   <img class="is-rounded" title="<?php echo $nomeentregador ?>" src="<?php echo $linkfotoj ?>">
   </figure></td>
+                                               <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
+                                               <td><a class="has-text-black"><?php echo date('d/m/y H:i', $dateehorped) ?></a></td>  
+                                                
                                                  
                                                  <td><a class="has-text-black"><?php echo $logradouro ?></a></td>
 </td>                                             <td><a class="has-text-black">R$<?php echo $valor ?></a></td>
