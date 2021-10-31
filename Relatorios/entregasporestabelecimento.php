@@ -97,7 +97,16 @@ include ('../login/verifica_login.php');
                         </datalist>
                     </div>
                   </div>
-                    
+                 <?php &nbsp ?>
+                  <label class="label">Status:</label>
+                          <div class="select is-info">
+                          <select name="status">
+                              <option></option>
+                              <option>Aberta</option>
+                              <option>Cancelada</option>
+                              <option>Fechada</option>
+                                  </select>
+                              </div> 
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" >
@@ -112,16 +121,8 @@ include ('../login/verifica_login.php');
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
                   </div>
-                       <br>
-                       <label class="label">Status:</label>
-                          <div class="select is-info">
-                          <select name="status">
-                              <option></option>
-                              <option>Aberta</option>
-                              <option>Cancelada</option>
-                              <option>Fechada</option>
-                                  </select>
-                              </div> 
+                       
+                       
                           </br>
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
