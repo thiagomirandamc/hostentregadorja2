@@ -140,7 +140,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
            
                
             <?php
-            if (isset($_GET['estabelecimento']) && ($_GET['status'])) {
+            if (isset($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) {
 
               $nomeestabelecimento = $_GET['estabelecimento'];
               $de = $_GET['data'];
@@ -223,7 +223,14 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                               <?php } ?>
                                                 </tbody>
                                             </table>
-                                            <?php   } ?>
+                                            <?php   
+  } elseif (empty($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) { ?>
+
+
+    <td><a class="has-text-black"> Você colocou parametetros invalidos. </a></td>                                
+                                           
+                                           
+                        <?php                   } ?>
                                             
     </div>
   </div>
