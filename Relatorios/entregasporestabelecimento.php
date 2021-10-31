@@ -184,23 +184,9 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 
 </tr>
 </thead>
-<tfoot>
-<?php  $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
-                                    $exc45j = mysqli_query($conexao2, $sql45j);
-                                    $row45j = mysqli_fetch_assoc($exc45j);
-                                    $valorperiodo = $row45j['total450'];     
-                  
-                                    ?>    
-    <tr>
-      <th><abbr title="Totais">Totais</abbr></th>
-      <th><abbr title=""></abbr></th>
-      <th><abbr title=""></abbr></th>
-      <th><abbr title="Valor Total"><?php echo $valorperiodo ?> </abbr></th>
-    </tr>
-  </tfoot>
 <tbody>                 
                <?php
-                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
+                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
@@ -234,6 +220,16 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                               <?php } ?>
                                                 </tbody>
                                             </table>
+
+                                            <?php  $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                    $exc45j = mysqli_query($conexao2, $sql45j);
+                                    $row45j = mysqli_fetch_assoc($exc45j);
+                                    $valorperiodo = $row45j['total450'];     
+                  
+                                    ?>    
+                                    <label class="label">Total deentregas: </label>
+                                    <label class="label">Valor Total: R$ <?php echo $valorperiodo ?> </label>
+                                    
                                             <?php   
   } elseif (empty($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) { ?>
 
