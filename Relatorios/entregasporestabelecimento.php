@@ -152,7 +152,7 @@ include ('../login/verifica_login.php');
                     $numero = $rs3['numero'];
                     $identregador = $rs3['identregador'];
                    ?>
-                   <?php } ?>
+                  
                     <div class="columns is-desktop">
                               
                     <div class="column">
@@ -164,16 +164,7 @@ include ('../login/verifica_login.php');
 <br>           
                         <tbody>
                             
-                        <?php
-                                         $atividades = "SELECT * FROM ticket2 WHERE statusatividade = 'Aberta' Order by idsuptrein DESC";
-                                         $resultatividades = mysqli_query($conexao, $atividades);
-                                               while ($res = mysqli_fetch_assoc($resultatividades)) {
-                                                   $prioridade = $res['prioridade'];
-                                                   $idticket = $res['idsuptrein'];
-                                                   $us = $res['idatuante'];
-                                                   $tipoatividade = $res['tipoatividade'];
-                                                   $idclientecart = $res['idclientecarteira'];
-                                               ?> 
+                       
                                                       
                                                        
                                                <tr>            
@@ -193,7 +184,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                                 </tbody>
                                             </table>
                                             
-                                            <?php  } } ?>
+                                            <?php } } } ?>
     </div>
   </div>
     
