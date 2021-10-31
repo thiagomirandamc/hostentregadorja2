@@ -238,10 +238,15 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                     $exsdsd = mysqli_query($conexao2, $sql4gh);
                                     $rodfdf = mysqli_fetch_assoc($exsdsd);
                                     $entregasperiodo = $rodfdf ['total450']; 
-                  
+
+                                    $dateinic = strtotime($data_sem_barra1);
+                                    $datefin = strtotime($data_sem_barra2);
                                     ?>
+
+                                     
+                       
                                     <label class="label">Estabelecimento: <?php echo $nomeestabelecimento ?> </label> 
-                                    <label class="label">Período: De <?php echo $data_sem_barra1 ?> até <?php echo $data_sem_barra2 ?>  </label>    
+                                    <label class="label">Período: De <?php echo date('d/m/y H:i', $dateinic) ?> até <?php echo date('d/m/y H:i', $datefin) ?>  </label>    
                                     <label class="label">Total de entregas: <?php echo $entregasperiodo ?> </label>
                                     <label class="label">Valor Total: R$ <?php echo $valorperiodo ?> </label>
                                     
