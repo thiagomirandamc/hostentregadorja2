@@ -112,7 +112,17 @@ include ('../login/verifica_login.php');
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
                   </div>
-                       <br> 
+                       <br>
+                       <label class="label">Status:</label>
+                          <div class="select is-info">
+                          <select name="status">
+                              <option></option>
+                              <option>Aberta</option>
+                              <option>Cancelada</option>
+                              <option>Fechada</option>
+                                  </select>
+                              </div> 
+                          </br>
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
                     </div>
