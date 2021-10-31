@@ -136,7 +136,8 @@ include ('../login/verifica_login.php');
             <?php
             if (isset($_GET['estabelecimento']) && ($_GET['status'])) {
 
-              $resuesta = "SELECT * FROM usuario WHERE nome = '$_GET['estabelecimento']'";
+              $nomeestabelecimento = $_GET['estabelecimento'];
+              $resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
               $resuleta = mysqli_query($conexao2, $resuesta);
               $row_oporest = mysqli_fetch_assoc($resuleta);
                $idestabelecimento = $row_oporest['usuario_id'];
@@ -188,41 +189,11 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
   <img class="is-rounded" src="<?php echo $linkfotoj ?>">
   </figure></td>
                                                             
-                                               <td>  <?php  if ($prioridade == 'Alta') { ?>
-                               <span class="tag is-danger"></span>
-                                <?php } elseif ($prioridade == 'Media' ) { ?>
-                               <span class="tag is-warning"></span> 
-                               <?php } elseif ($prioridade == 'Baixa' ) { ?>
-                               <span class="tag is-link"></span> 
-                                <?php } ?> </td>
-                                                
-                                    <?php  if ($tipoatividade !== 'Script') { 
-                                                             $nomecli2 = "SELECT * FROM clientecarteira WHERE idclientecarteira = '$idclientecart'";
-                                               $nomc2 = mysqli_query($conexao, $nomecli2);
-                                                  while ($row_nomec2 = mysqli_fetch_assoc($nomc2)){
-                                                  $nomeclien2 = $row_nomec2['nomeclientecarteira']; } ?>
-                                               
-                                               <td><?php echo $idticket ?></td>
-                                                            <td> <?php echo "<a class='has-text-black' href='showticket.php?idticket=" . $idticket . "'>". $nomeclien2 ."</a>";?><br>
-                                                             <td> <a class="has-text-grey"><?php echo $res['tipoatividade']; ?> </a><br></td>
-                                             
-                                                             
-                                                             
-                                                <?php } elseif ($tipoatividade === 'Script') { 
-                                               $nomecli = "SELECT * FROM cliente WHERE idcliente = '$idclientecart'";
-                                               $nomc = mysqli_query($conexao, $nomecli);
-                                                  while ($row_nomec = mysqli_fetch_assoc($nomc)){
-                                                  $nomeclien = $row_nomec['nomecliente']; } ?>
-                                               
-                                                             <td><?php echo $idticket ?></td>
-                                                            <td> <?php echo "<a class='has-text-black' href='showticket.php?idticket=" . $idticket . "'>". $nomeclien ."</a>";?><br>
-                                                             <td> <a class="has-text-grey"><?php echo $res['tipoatividade']; ?> </a><br></td>
-                                                               
-                                               <?php  } } ?>  
+                                              
                                                 </tbody>
                                             </table>
                                             
-                                            <?php   }  ?>
+                                            <?php  } } ?>
     </div>
   </div>
     
