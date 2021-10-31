@@ -142,7 +142,31 @@ include ('../login/verifica_login.php');
               $row_oporest = mysqli_fetch_assoc($resuleta);
                $idestabelecimento = $row_oporest['usuario_id'];
                
-               
+            ?>   <div class="columns is-desktop">
+                              
+               <div class="column">
+                   
+                   <div class="container">
+                       <div class="hero-body">
+                      
+                       <table class="table table-responsive is-fullwidth ">  
+<br>           
+<thead>
+<tr>
+ <th><abbr title="ID">ID</abbr></th>
+ <th><abbr title="Entregador">Ent.</abbr></th>
+ <th><abbr title="Logradouro">Logradouro</abbr></th>
+ <th><abbr title="Valor">R$</abbr></th>
+
+</tr>
+</thead>
+                   <tbody>
+                       
+                  
+                                                 
+                                                  
+                                          <tr>      
+               <?php
                 $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento'";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
@@ -154,30 +178,7 @@ include ('../login/verifica_login.php');
                     $valor = $rs3['valor'];
                    ?>
                   
-                    <div class="columns is-desktop">
-                              
-                    <div class="column">
-                        
-                        <div class="container">
-                            <div class="hero-body">
-                           
-                            <table class="table table-responsive is-fullwidth ">  
-<br>           
-<thead>
-    <tr>
-      <th><abbr title="ID">ID</abbr></th>
-      <th><abbr title="Entregador">Ent.</abbr></th>
-      <th><abbr title="Logradouro">Logradouro</abbr></th>
-      <th><abbr title="Valor">R$</abbr></th>
-
-    </tr>
-  </thead>
-                        <tbody>
-                            
-                       
-                                                      
-                                                       
-                                               <tr>  
+                    
                                                <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
                                                 <?php
                                                 
@@ -194,11 +195,11 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                                  
                                                  <td><a class="has-text-black"><?php echo $logradouro ?></a></td>
 </td>                                             <td><a class="has-text-black">R$<?php echo $valor ?></a></td>
-                                              
+                                              <?php } ?>
                                                 </tbody>
                                             </table>
+                                            <?php   } ?>
                                             
-                                            <?php  } } ?>
     </div>
   </div>
     
