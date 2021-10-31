@@ -88,9 +88,9 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                 <label class="label">Estabelecimento</label>
                 <div class="field has-addons">
                     <div class="control">
-                        <input class="input is-info" type="search"  name="estabelecimento"  list="estabelecimento" >
+                        <input class="input is-info" type="search" value="<?php echo $estabelecimentopesq ?>"  name="estabelecimento"  list="estabelecimento" >
                         <datalist id="estabelecimento"> 
-                            <option><?php echo $estabelecimentopesq ?></option> 
+                            <option></option> 
                             <?php
                             $res_estab = "SELECT * FROM usuario WHERE permissao = 4";
                             $resultadestab = mysqli_query($conexao2, $res_estab);
