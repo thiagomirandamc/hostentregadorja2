@@ -139,16 +139,16 @@ include ('../login/verifica_login.php');
               $nomeestabelecimento = $_GET['estabelecimento'];
               $de = $_GET['data'];
               
-                  $de = explode(" ", $dataatividade1);
-                  list($date1, $hora1) = $dataatividade1;
+                  $de = explode(" ", $de);
+                  list($date1, $hora1) = $de;
                   $data_sem_barra1 = array_reverse(explode("/", $date1));
                   $data_sem_barra1 = implode("-", $data_sem_barra1);
                   $data_sem_barra1 = $data_sem_barra1 . " " . $hora1;
 
               $para = $_GET['data2'];
 
-                  $para = explode(" ", $dataatividade2);
-                  list($date2, $hora2) = $dataatividade2;
+                  $para = explode(" ", $para);
+                  list($date2, $hora2) = $para;
                   $data_sem_barra2 = array_reverse(explode("/", $date2));
                   $data_sem_barra2 = implode("-", $data_sem_barra2);
                   $data_sem_barra2 = $data_sem_barra2 . " " . $hora2;
@@ -164,7 +164,7 @@ include ('../login/verifica_login.php');
                    
                    <div class="container">
                        <div class="hero-body">
-                       <td><a class="has-text-black">Relatório de <?php echo $de ?> a <?php echo $para ?> </a></td> 
+                       <td><a class="has-text-black">Relatório de <?php echo $data_sem_barra1 ?> a <?php echo $data_sem_barra2 ?> </a></td> 
                        <table class="table table-responsive is-fullwidth ">  
 <br>           
 <thead>
@@ -178,7 +178,7 @@ include ('../login/verifica_login.php');
 </thead>
 <tbody>                 
                <?php
-                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '2021-10-27 16:13:56' and '2021-10-30 10:13:56' ";
+                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
