@@ -151,6 +151,7 @@ include ('../login/verifica_login.php');
                     $logradouro = $rs3['logradouro'];
                     $numero = $rs3['numero'];
                     $identregador = $rs3['identregador'];
+                    $valor = $rs3['valor'];
                    ?>
                   
                     <div class="columns is-desktop">
@@ -179,7 +180,9 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
   <figure class="image is-24x24">
   <img class="is-rounded" src="<?php echo $linkfotoj ?>">
   </figure></td>
-                                                            
+                                                 <td>
+                                                 <td><a class="has-text-grey-lighter"><?php echo $logradouro ?></a></td>
+</td>                                             <td><a class="has-text-grey-lighter"><?php echo $valor ?></a></td>
                                               
                                                 </tbody>
                                             </table>
