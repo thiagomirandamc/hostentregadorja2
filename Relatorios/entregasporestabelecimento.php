@@ -104,8 +104,8 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                    &nbsp 
                   <label class="label">Status:</label>
                           <div class="select is-info">
-                          <select name="status">
-                              <option><?php echo $statuspesq ?></option>
+                          <select name="status" value="<?php echo $statuspesq ?>">
+                              <option></option>
                               <option>Aberta</option>
                               <option>Cancelada</option>
                               <option>Fechada</option>
