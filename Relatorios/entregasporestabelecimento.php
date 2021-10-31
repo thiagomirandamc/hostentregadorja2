@@ -136,9 +136,13 @@ include ('../login/verifica_login.php');
             <?php
             if (isset($_GET['estabelecimento']) && ($_GET['status'])) {
 
-             
+              $resuesta = "SELECT * FROM usuario WHERE nome = '$_GET['estabelecimento']'";
+              $resuleta = mysqli_query($conexao2, $resuesta);
+              $row_oporest = mysqli_fetch_assoc($resuleta);
+               $idestabelecimento = $row_oporest['usuario_id'];
                
-                $sql13 = "select * FROM entregas WHERE identrega = '$_GET[identrega]'";
+               
+                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento'";
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
