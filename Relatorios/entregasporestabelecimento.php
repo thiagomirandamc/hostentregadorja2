@@ -169,7 +169,7 @@ include ('../login/verifica_login.php');
                                                       
                                                        
                                                <tr>  
-                                               <td><a class="has-text-black">ID#<?php echo $identrega ?></a></td>          
+                                               <td><a class="has-text-black">ID<?php echo $identrega ?></a></td>          
                                                 <?php
                                                 
  $result_clioport1sj = "SELECT * FROM usuario WHERE usuario_id = '$identregador'";
