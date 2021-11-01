@@ -31,6 +31,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
    ?> <figure class="image is-24x24">
   <img class="is-rounded" src="<?php echo $linkfotoj ?>">
   </figure>
+      &nbsp;
     <?php  echo $usuario ?>
       </a>
       <a class="navbar-item" href="Login/logout.php">
