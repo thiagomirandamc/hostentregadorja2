@@ -24,7 +24,14 @@
       <div class="navbar-item">
         <div class="buttons">
         <a class="navbar-item">
-        <?php echo $usuario ?>
+      <?php  $result_clioport1sj = "SELECT * FROM usuario WHERE nome = '$usuario'";
+$resultado_oport1sj = mysqli_query($conexao2, $result_clioport1sj);
+while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
+    $linkfotoj = $row_nomeclioport1sj['linkfoto'];
+   ?> <figure class="image is-24x24">
+  <img class="is-rounded" src="<?php echo $linkfotoj ?>">
+  </figure>
+    <?php  echo $usuario ?>
       </a>
       <a class="navbar-item" href="Login/logout.php">
          Sair
