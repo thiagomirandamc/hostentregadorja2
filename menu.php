@@ -15,8 +15,16 @@
       
     </ul>
     <form class="form-inline my-2 my-lg-0">
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php echo $usuario ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Conta</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="login.logout.php">Sair</a>
+        </div>
       </li>
     </form>
   </div>
