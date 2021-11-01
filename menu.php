@@ -34,7 +34,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
       &nbsp;
     <?php  echo $usuario ?>
       </a>
-      <a class="navbar-item" href="Login/logout.php">
+      <a class="navbar-item" href="login/logout.php">
          Sair
       </a>
          
