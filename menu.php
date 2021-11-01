@@ -30,23 +30,16 @@
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            About
+            Conta
           </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
+          
           <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
+          <a class="navbar-item" href="login/logout.php">
+           Sair
           </a>
         </div>
       </div>
-        <a class="navbar-item" href="login/logout.php">
-           Sair
-          </a>
+    
          
         </div>
       </div>
