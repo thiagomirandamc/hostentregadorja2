@@ -45,13 +45,9 @@ session_start();
         
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Inicial
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="">Teste</a>
-          
-        </div>
+      <a class="navbar-item" href="inicial.php">
+        Inicial
+      </a>
       </li>
       
       
@@ -59,11 +55,14 @@ session_start();
       
         
      
-      <div class="container">
-      <li class="nav-item">
-      <a href="login/logout.php">Sair</a>
-      </li>
+      
+    <div class="navbar-end">
+      <div class="navbar-item">
+      <a class="navbar-item" href="../login/logout.php">
+        Sair
+      </a>
       </div>
+    
     </ul>
   </div>
 </nav>
