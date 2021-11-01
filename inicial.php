@@ -35,7 +35,7 @@ $usuario = $_SESSION['nome'];
 
 <body>
 
- include <?php include 'menu.php';?>
+<?php include 'menu.php';?>
  
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
