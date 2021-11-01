@@ -23,23 +23,12 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-        <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
+        <a class="navbar-item">
         <?php echo $usuario ?>
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            Conta
-          </a>
-          
-          <hr class="navbar-divider">
-          <a class="navbar-item" href="login/logout.php">
-           Sair
-          </a>
-        </div>
-      </div>
-    
+      </a>
+      <a class="navbar-item" href="Login/logout.php">
+         Sair
+      </a>
          
         </div>
       </div>
