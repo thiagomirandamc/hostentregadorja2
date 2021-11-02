@@ -21,7 +21,7 @@ session_start();
 
 <body>
 
-<?php include 'menu.php';?>
+<?php include '../menu.php';?>
     <?php
     $usuario = $_SESSION['nome'];
     $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";

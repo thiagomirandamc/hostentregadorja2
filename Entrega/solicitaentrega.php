@@ -49,7 +49,7 @@ $row_opfxc = mysqli_fetch_assoc($resuasfg);
 
 <body>
 
-<?php include 'menu.php';?>
+<?php include '../menu.php';?>
         <section class="hero is-success is-fullheight">
             <form action="solicitarentrega.php" method="POST">
                 <div class="hero-body">

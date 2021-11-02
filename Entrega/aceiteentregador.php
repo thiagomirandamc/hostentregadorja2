@@ -45,7 +45,7 @@ include ('../login/verifica_login.php');
 
 <body>
 
-<?php include 'menu.php';?>
+<?php include '../menu.php';?>
         
 
     <div class="hero is-info welcome is-small">

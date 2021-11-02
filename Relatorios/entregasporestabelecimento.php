@@ -41,7 +41,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 
 <body>
 
-<?php include 'menu.php';?>
+<?php include '../menu.php';?>
         
 
     <div class="hero is-info welcome is-small">

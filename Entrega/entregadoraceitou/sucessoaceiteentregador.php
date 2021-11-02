@@ -39,7 +39,7 @@ session_start();
 
 <body>
 
-<?php include 'menu.php';?>
+<?php include '../../menu.php';?>
  
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
