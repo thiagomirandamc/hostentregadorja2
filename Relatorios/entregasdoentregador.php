@@ -62,7 +62,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
 
         <div class="column is-4 is-offset-4">
 
-            <form action="entregasporestabelecimento.php" method="GET">
+            <form action="entregasdoentregador.php" method="GET">
                  
                   <label class="label">Status:</label>
                   <div class="field has-addons">
