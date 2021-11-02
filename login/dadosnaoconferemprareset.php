@@ -53,7 +53,7 @@ session_start();
                 <br>
                 <br>
                 <div class="content">
-                        <a href="../resetsen.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Reset de Senha</a>
+                        <a href="../login/resetsen.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Reset de Senha</a>
                     </div>
                                 
                      
