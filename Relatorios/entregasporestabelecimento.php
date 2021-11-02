@@ -17,9 +17,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
              $permissao = $rspl['permissao']; } }   
              
              if ($permissao == '1' || $permissao == '2' || $permissao == '4' ) { ?>
-             ?>  
-
-?>
+            
 <html>
     <head>    
         <meta charset="utf-8">
