@@ -155,7 +155,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                <?php
                if ($statusini = 'Todos') {
                 $sql13 = "select * FROM entregas WHERE identregador = '$identregador' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
-            } else {
+            } elseif ($statusini != 'Todos')  {
                 $sql13 = "select * FROM entregas WHERE identregador = '$identregador' AND status = '$statusini' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
             }
                 
