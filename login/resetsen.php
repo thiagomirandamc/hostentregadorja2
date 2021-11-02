@@ -45,7 +45,7 @@ session_start();
                    
                     ?>
                     <div class="box">
-                        <form action="cadastraruser.php" method="POST">
+                        <form action="resetarsen.php" method="POST">
                             
                             <div class="field">
                                 <div class="control">
