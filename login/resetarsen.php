@@ -35,6 +35,8 @@ $conexao2->close();
 
 header('Location: sucessoalterarsenha.php');
 
+} else {
+	header('Location: dadosnaoconferemprareset.php');
 }
 
 exit;
