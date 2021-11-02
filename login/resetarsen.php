@@ -33,6 +33,6 @@ if($conexao2->query($exec) === TRUE) {
 
 $conexao2->close();
 
-header('Location: ../index.php');
+header('Location: sucessoalterarsenha.php');
 exit;
 ?>
