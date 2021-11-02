@@ -18,7 +18,7 @@ $row = mysqli_fetch_assoc($result);
 /*se o banco retornar com 1 linha afetada, redireciona ai faz a alteracao */
 if($row['total'] == 1) {
 
-	$sql20 = "UPDATE usuario  SET senha = '$cliticket' WHERE cpfoucnpj = '$cpfoucnpj'";
+	$sql20 = "UPDATE usuario  SET senha = '$senha' WHERE cpfoucnpj = '$cpfoucnpj'";
 
 $exec = mysqli_query($conexao2, $sql20);
 	
