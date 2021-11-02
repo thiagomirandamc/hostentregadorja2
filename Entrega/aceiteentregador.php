@@ -3,7 +3,7 @@ $dir = '../';
 include('../conexao2.php');
 session_cache_expire(18000);
 session_start();
-include ('../login/verifica_login.php');
+include ('../login/verifica_login.php?pagina=aceiteentregador.php');
 
 
 
