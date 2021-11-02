@@ -75,7 +75,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                               <option>Fechada</option>
                                   </select>
                               </div> 
-                          
+                   </div>      
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" value="<?php echo $depesq ?>" >
@@ -96,7 +96,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
                     </div>
-                    </div> 
+                     
             </form>
               
             
