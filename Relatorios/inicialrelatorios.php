@@ -60,6 +60,8 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     <div class="content">
                         <a href="entregasporestabelecimento.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Entregas por Estabelecimento</a>
                     </div>
+                    <?php }  
+                    if ($permissao == '1' || $permissao == '2' || $permissao == '3' ) { ?>
                     <div class="content">
                         <a href="entregasdoentregador.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Entregas por entregador</a>
                     </div>  

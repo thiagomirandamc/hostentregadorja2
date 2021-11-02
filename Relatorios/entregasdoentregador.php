@@ -9,8 +9,17 @@ $statuspesq = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_STRING);
 $depesq = filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING);
 $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
   
+$usuario = $_SESSION['nome'];
+$cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
+                $execult = mysqli_query($conexao2, $cult);
+              if ($execult) {
+                    while ($rspl = mysqli_fetch_assoc($execult)) { 
+             $permissao = $rspl['permissao']; } }   
+             
+             if ($permissao == '1' || $permissao == '2' || $permissao == '3' ) { ?>
+             ?>  
 
-?>
+
 <html>
     <head>    
         <meta charset="utf-8">
@@ -250,7 +259,10 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
 </div>
                         
                         <br>
-                    
+                        <?php }  else { ?>
+
+<label id="referencia" class="label">Você não tem permissão para essa página.</label>
+<?php } ?>             
                      
                         </div>
                   
