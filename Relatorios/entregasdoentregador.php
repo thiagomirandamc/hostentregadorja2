@@ -65,6 +65,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
             <form action="entregasporestabelecimento.php" method="GET">
                  
                   <label class="label">Status:</label>
+                  <div class="field has-addons">
                           <div class="select is-info">
                           <select name="status">
                               <option><?php echo $statuspesq ?></option>
@@ -74,29 +75,28 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
                               <option>Fechada</option>
                                   </select>
                               </div> 
-                          </div>     
-                          </div> 
+                          
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" value="<?php echo $depesq ?>" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
-                  </div>
+                    </div>
                   <label class="label">Até:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data2" value="<?php echo $parapesq ?>" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
-                  </div>
+                    </div>
                        
                        
                           </br>
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
                     </div>
-                </div> 
+                    </div> 
             </form>
               
             
