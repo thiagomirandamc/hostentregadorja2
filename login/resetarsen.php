@@ -12,7 +12,7 @@ $senha = mysqli_real_escape_string($conexao2, trim(md5($_POST['senha'])));
 
 
 /* verificar se não já tem o usuario que quer cadastrar e bloquear*/
-$sql = "select count(*) as total from usuario where cpfoucnpj = '$cpfoucnpj'";
+$sql = "select count(*) as total from usuario where cpfoucnpj = '$cpfoucnpj' AND rg = '$rg'";
 $result = mysqli_query($conexao2, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -23,7 +23,7 @@ if($row['total'] == 1) {
 
 $exec = mysqli_query($conexao2, $sql20);
 	
-}
+
 
 
 
@@ -34,5 +34,8 @@ if($conexao2->query($exec) === TRUE) {
 $conexao2->close();
 
 header('Location: sucessoalterarsenha.php');
+
+}
+
 exit;
 ?>
