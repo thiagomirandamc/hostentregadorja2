@@ -62,6 +62,9 @@ session_start();
                            
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Entrar</button>
                         </form>
+                        <div class="field">
+                                <a class="has-text-link" href="login/resetsen.php">Esqueci minha senha</a>
+                            </div>
                     </div>
                 </div>
             </div>
