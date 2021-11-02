@@ -1,4 +1,5 @@
 <?php
+$dir = '../';
 include('../conexao2.php');
 session_cache_expire(18000);
 session_start();
