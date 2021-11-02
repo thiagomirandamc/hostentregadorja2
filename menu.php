@@ -16,6 +16,7 @@
     <form class="form-inline my-2 my-lg-0">
     <li class="nav-item dropdown">
     <?php
+       $usuario = $_SESSION['nome'];
             $result_clioport1sj = "SELECT * FROM usuario WHERE nome = '$usuario'";
             $resultado_oport1sj = mysqli_query($conexao2, $result_clioport1sj);
             while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){

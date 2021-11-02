@@ -45,7 +45,7 @@ session_start();
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
                    <?php 
-                   $usuario = $_SESSION['nome'];
+                   
                    
                     
 $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
