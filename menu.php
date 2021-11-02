@@ -17,9 +17,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        
-        <?php
+    <?php
             $result_clioport1sj = "SELECT * FROM usuario WHERE nome = '$usuario'";
             $resultado_oport1sj = mysqli_query($conexao2, $result_clioport1sj);
             while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
@@ -28,6 +26,7 @@
                    <figure class="image is-24x24">
                   <img class="is-rounded" src="<?php echo $linkfotoj ?>">
                   </figure>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php echo $usuario ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
