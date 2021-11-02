@@ -47,19 +47,21 @@ session_start();
                     <div class="box">
                         <form action="resetarsen.php" method="POST">
                             
-                            <div class="field">
-                                <div class="control">
-                                    <input name="cpfoucnpj" type="text" class="input is-large" placeholder="CPF ou CNPJ">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <input name="senha" class="input is-large" type="password" placeholder="Senha">
-                                </div>
-                            </div>
-                            <div class="field"> 
-                            
-                            </div>
+                        <label id="cpfoucnpj" class="label">CPF ou CNPJ</label>
+
+
+<input class="input is-info" type="text"  name="cpfoucnpj" required>
+
+</div>
+
+<div class="field">  
+
+<label id="senha" class="label">Senha</label>
+
+
+<input class="input is-info" type="text"  name="senha" required>
+
+</div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar senha</button>
                         </form>
                     </div>
