@@ -54,6 +54,7 @@ session_start();
 
 </div>
 
+<div class="box">
 <div class="field">  
 
 <label id="senha" class="label">Senha</label>
@@ -62,6 +63,7 @@ session_start();
 <input class="input is-info" type="text"  name="senha" required>
 
 </div>
+                </div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar senha</button>
                         </form>
                     </div>
