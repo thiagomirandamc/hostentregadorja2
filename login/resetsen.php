@@ -29,21 +29,8 @@ session_start();
                 <div class="column is-4 is-offset-4">
                     
                     <h3 class="title has-text-grey"><a  target="_blank">Reset de senha</a></h3>
-                    <?php
-                    if($_SESSION['status_cadastro']):
-                    ?>
-                    <div class="notification is-success">
-                      <p>Alteração efetuada!</p>
-                      <p>Faça login informando o seu usuário e senha <a href="login.php">aqui</a></p>
-                    </div>
-                    <?php
-                    endif;
+                    
                    
-                    ?>
-                    <?php
-                   
-                   
-                    ?>
                     <div class="box">
                         <form action="resetarsen.php" method="POST">
                             
@@ -53,6 +40,16 @@ session_start();
 <input class="input is-info" type="text"  name="cpfoucnpj" required>
 
 </div>
+<div class="box">
+<div class="field">  
+
+<label id="rg" class="label">RG do responsável</label>
+
+
+<input class="input is-info" type="text"  name="rg" required>
+
+</div>
+                </div>
 
 <div class="box">
 <div class="field">  

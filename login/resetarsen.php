@@ -5,6 +5,7 @@ include('../conexao2.php');
 
 /*vincular os campos do formulario com o banco*/
 $cpfoucnpj = mysqli_real_escape_string($conexao2, trim($_POST['cpfoucnpj']));
+$rg = mysqli_real_escape_string($conexao2, trim($_POST['rg']));
 $senha = mysqli_real_escape_string($conexao2, trim(md5($_POST['senha'])));
 
 
@@ -18,7 +19,7 @@ $row = mysqli_fetch_assoc($result);
 /*se o banco retornar com 1 linha afetada, redireciona ai faz a alteracao. */
 if($row['total'] == 1) {
 
-	$sql20 = "UPDATE usuario  SET senha = '$senha' WHERE cpfoucnpj = '$cpfoucnpj'";
+	$sql20 = "UPDATE usuario  SET senha = '$senha' WHERE cpfoucnpj = '$cpfoucnpj' AND rg = '$rg'";
 
 $exec = mysqli_query($conexao2, $sql20);
 	
