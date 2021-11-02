@@ -23,7 +23,7 @@ $row_opfxc = mysqli_fetch_assoc($resuasfg);
         <title>Solicitar Entrega</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="../css/bulma.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
         <script type="text/javascript" src="../jquery.min.js"></script>
         <script type="text/javascript" src="../smoothscroll.js"></script>
         <script type="text/javascript" src="../popper.min.js"></script>
