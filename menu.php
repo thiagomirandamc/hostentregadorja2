@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="inicial.php">Inicial</a>
+        <a class="nav-link" href="<?php echo $dir?>inicial.php">Inicial</a>
       </li>
       
       
@@ -25,14 +25,14 @@
                    <figure class="image is-24x24">
                   <img class="is-rounded" src="<?php echo $linkfotoj ?>">
                   </figure>
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php echo $usuario ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Conta</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="login/logout.php">Sair</a>
+          <a class="dropdown-item" href="<?php echo $dir?>login/logout.php">Sair</a>
         </div>
       </li>
     </form>
