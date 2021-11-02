@@ -60,7 +60,7 @@ session_start();
                             <div class="field"> 
                             
                             </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar senha</button>
                         </form>
                     </div>
                 </div>
