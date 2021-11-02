@@ -63,6 +63,7 @@ session_start();
                 </div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar senha</button>
                         </form>
+                        <br>
                         <div class="field">
                                 <a class="has-text-link" href="../index.php">Voltar pro início</a>
                             </div>
