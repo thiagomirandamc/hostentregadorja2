@@ -2,7 +2,7 @@
 $dir = '../';
 include('../conexao2.php');
 session_start();
-include ('../login/verifica_login.php?pagina=aceiteentregador.php');
+include ('../login/verifica_login.php');
 
 
 
