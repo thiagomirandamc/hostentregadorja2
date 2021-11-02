@@ -20,7 +20,7 @@ $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="../css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/login.css">
-        
+      
        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -264,9 +264,9 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                   </div>
                   
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-         <script src="bootstrap.min.js" type="text/javascript"></script>
-         <script src="bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-         <script src="bootstrap-datetimepicker.pt-BR.js" type="text/javascript"></script>
+         <script src="../bootstrap.min.js" type="text/javascript"></script>
+         <script src="../bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+         <script src="../bootstrap-datetimepicker.pt-BR.js" type="text/javascript"></script>
          <script type="text/javascript">
 			$('.data_formato').datetimepicker({
 				weekStart: 1,
