@@ -57,7 +57,7 @@ session_start();
 <label id="senha" class="label">Senha</label>
 
 
-<input class="input is-info" type="text"  name="senha" required>
+<input class="input is-info" type="password"  name="senha" required>
 
 </div>
                 </div>
