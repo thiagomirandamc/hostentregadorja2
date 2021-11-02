@@ -15,7 +15,7 @@ $sql = "select count(*) as total from usuario where cpfoucnpj = '$cpfoucnpj'";
 $result = mysqli_query($conexao2, $sql);
 $row = mysqli_fetch_assoc($result);
 
-/*se o banco retornar com 1 linha afetada, redireciona ai faz a alteracao */
+/*se o banco retornar com 1 linha afetada, redireciona ai faz a alteracao. */
 if($row['total'] == 1) {
 
 	$sql20 = "UPDATE usuario  SET senha = '$senha' WHERE cpfoucnpj = '$cpfoucnpj'";
