@@ -34,7 +34,7 @@ session_start();
                     </div>
                     <?php
                     endif;
-                    unset($_SESSION['status_cadastro']) ?>
+                     ?>
                     
                     <?php
                     if(isset($_SESSION['nao_autenticado'])):
