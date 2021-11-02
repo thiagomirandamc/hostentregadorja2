@@ -21,15 +21,8 @@ session_start();
 <body>
 
 <?php include '../menu.php';?>
-    <?php
-    $usuario = $_SESSION['nome'];
-    $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
-                $execult = mysqli_query($conexao2, $cult);
-              if ($execult) {
-                    while ($rspl = mysqli_fetch_assoc($execult)) { 
-             $permissao = $rspl['permissao']; } }    ?> 
-      <?php
-                    if ($permissao == '1' || $permissao == '2') { ?>
+    
+                   
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
@@ -67,14 +60,14 @@ session_start();
                             <div class="field"> 
                             
                             </div>
-                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Alterar</button>
+                            <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-                    <?php } ?>
+                   
 </body>
 
 </html>
