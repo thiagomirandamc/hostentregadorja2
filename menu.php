@@ -9,9 +9,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="inicial.php">Inicial</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+      
       
       
     </ul>
