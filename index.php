@@ -25,6 +25,17 @@ session_start();
                 <div class="column is-4 is-offset-4">
                     <h3 class="title has-text-grey">Sistema de Login</h3>
                     <h3 class="title has-text-grey"><a href="https://systemwayautomacao.com.br" target="_blank">Entregador já</a></h3>
+                   
+                   <?php if($_SESSION['status_cadastro']):
+                    ?>
+                    <div class="notification is-success">
+                      <p>Alteração feita com sucesso!</p>
+                      <p>Faça login informando o seu usuário e senha.</a></p>
+                    </div>
+                    <?php
+                    endif;
+                    unset($_SESSION['status_cadastro']) ?>
+                    
                     <?php
                     if(isset($_SESSION['nao_autenticado'])):
                         ?>

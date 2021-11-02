@@ -32,6 +32,6 @@ if($conexao2->query($exec) === TRUE) {
 
 $conexao2->close();
 
-header('Location: resetsen.php');
+header('Location: ../index.php');
 exit;
 ?>
