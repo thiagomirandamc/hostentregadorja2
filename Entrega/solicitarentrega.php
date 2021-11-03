@@ -62,7 +62,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
- CURLOPT_POSTFIELDS => "{\n\t\"serviceId\": \"4d0dc0d0-1f41-4ce6-ae1a-4a30bc213ddd\",\n\t\"contactId\": \"2f0864f1-80f8-454a-a83f-230314c3936b\",\n\t\"text\": \"*Entregador Já* \\n*Nova entrega!* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações:* $observacoes \\n. \\nEntregadores para aceitar, acessar o link abaixo \\nhttps://$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
+ CURLOPT_POSTFIELDS => "{\n\t\"serviceId\": \"4d0dc0d0-1f41-4ce6-ae1a-4a30bc213ddd\",\n\t\"contactId\": \"ed6428f0-0e8c-4bf2-9e84-e7016fad75f0\",\n\t\"text\": \"*Entregador Já* \\n*Nova entrega!* \\n*Entrega ID:* $entrega_atual \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valorbairro \\n*Observações:* $observacoes \\n. \\nEntregadores para aceitar, acessar o link abaixo \\nhttps://$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$entrega_atual  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
     "Content-Type: application/json"
