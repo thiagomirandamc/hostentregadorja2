@@ -223,13 +223,22 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                                 </tbody>
                                             </table>
 
-                                            <?php  $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
-                                    $exc45j = mysqli_query($conexao2, $sql45j);
+                                            <?php  
+                                            if ($statusini == 'Todos') {
+                                            $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                        } elseif ($statusini != 'Todos')  {
+                                            $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                        }
+                                            $exc45j = mysqli_query($conexao2, $sql45j);
                                     $row45j = mysqli_fetch_assoc($exc45j);
                                     $valorperiodo = $row45j['total450'];     
 
-                                      $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
-                                    $exsdsd = mysqli_query($conexao2, $sql4gh);
+                                    if ($statusini == 'Todos') {
+                                      $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                    } elseif ($statusini != 'Todos')  {
+                                        $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                    }
+                                      $exsdsd = mysqli_query($conexao2, $sql4gh);
                                     $rodfdf = mysqli_fetch_assoc($exsdsd);
                                     $entregasperiodo = $rodfdf ['total450']; 
 

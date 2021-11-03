@@ -4,11 +4,11 @@ include('../conexao2.php');
 session_start();
 include ('../login/verifica_login.php');
 
-$estabelecimentopesq = filter_input(INPUT_GET, 'estabelecimento', FILTER_SANITIZE_STRING); 
+
 $statuspesq = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_STRING);
 $depesq = filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING);
 $parapesq = filter_input(INPUT_GET, 'data2', FILTER_SANITIZE_STRING);
- 
+  
 $usuario = $_SESSION['nome'];
 $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                 $execult = mysqli_query($conexao2, $cult);
@@ -16,14 +16,16 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     while ($rspl = mysqli_fetch_assoc($execult)) { 
              $permissao = $rspl['permissao']; } }   
              
-             if ($permissao == '1' || $permissao == '2' || $permissao == '4' ) { ?>
+             if ($permissao == '1' || $permissao == '4') { ?>
             
+
+
 <html>
     <head>    
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Entregas por estabelecimento</title>
+        <title>Entregas do entregador</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="../css/bulma.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/login.css">
@@ -57,7 +59,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                             
                             <div class="container">
                                 <h1 class="title">
-                                    Relatório: Entregas por estabelecimento
+                                    Relatório: Entregas do estabelecimento
                                 </h1>
                               
                             </div>
@@ -69,25 +71,10 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
 
         <div class="column is-4 is-offset-4">
 
-            <form action="entregasporestabelecimento.php" method="GET">
-                <label class="label">Estabelecimento</label>
-                <div class="field has-addons">
-                    <div class="control">
-                        <input class="input is-info" type="search" value="<?php echo $estabelecimentopesq ?>"  name="estabelecimento"  list="estabelecimento" >
-                        <datalist id="estabelecimento"> 
-                            <option></option> 
-                            <?php
-                            $res_estab = "SELECT * FROM usuario WHERE permissao = 4";
-                            $resultadestab = mysqli_query($conexao2, $res_estab);
-                            while ($row_estabsas = mysqli_fetch_assoc($resultadestab)) {
-                                ?>
-                                <option value="<?php echo $row_estabsas['nome']; ?>"><?php echo $row_estabsas['nome']; ?>                               
-                                </option> <?php
-                            }
-                            ?>
-                        </datalist>
-                   &nbsp 
+            <form action="entregasdoentregador.php" method="GET">
+                 
                   <label class="label">Status:</label>
+                  <div class="field has-addons">
                           <div class="select is-info">
                           <select name="status">
                               <option><?php echo $statuspesq ?></option>
@@ -97,39 +84,41 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                               <option>Fechada</option>
                                   </select>
                               </div> 
-                          </div>     
-                          </div> 
+                   </div>      
                     <label class="label">De:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data" value="<?php echo $depesq ?>" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
-                  </div>
+                    </div>
                   <label class="label">Até:</label>
                     <div class="input-group date data_formato" data-date-format="dd/mm/yyyy HH:ii:ss">
 							<input type="text" class="form-control" name="data2" value="<?php echo $parapesq ?>" >
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-th"></span>
 							</span>
-                  </div>
+                    </div>
                        
                        
                           </br>
                     <div class="control">
                         <button type="submit" class="button is-link is-rounded">Consultar</button>
                     </div>
-                </div> 
+                     
             </form>
               
             
            
                
             <?php
-            if (isset($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) {
+            if (($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) {
 
-              $nomeestabelecimento = $_GET['estabelecimento'];
+              $nomeestabelecimento = $_SESSION['nome'];
+              
               $statusini = ($_GET['status']);
+              
+
               $de = $_GET['data'];
               
                   $de = explode(" ", $de);
@@ -149,7 +138,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
               $resuesta = "SELECT * FROM usuario WHERE nome = '$nomeestabelecimento'";
               $resuleta = mysqli_query($conexao2, $resuesta);
               $row_oporest = mysqli_fetch_assoc($resuleta);
-              $idestabelecimento = $row_oporest['usuario_id'];
+              $idestabelecimento= $row_oporest['usuario_id'];
                
             ?>   <div class="columns is-desktop">
                               
@@ -163,7 +152,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
 <thead>
 <tr>
 <th><abbr title="Status">Status</abbr></th>
-<th><abbr title="Entregador">Ent.</abbr></th>
+<th><abbr title="Estregador">Entg.</abbr></th>
  <th><abbr title="ID">ID</abbr></th>
  <th><abbr title="Data e hora pedida">Data e Hora</abbr></th>
  <th><abbr title="Logradouro">Logradouro</abbr></th>
@@ -178,10 +167,12 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
             } elseif ($statusini != 'Todos')  {
                 $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$statusini' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
             }
+                
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
                     $identrega = $rs3['identrega'];
+                    $identregador = $rs3['identregador'];
                     $logradouro = $rs3['logradouro'];
                     $numero = $rs3['numero'];
                     $idbairro = $rs3['idbairro'];
@@ -190,7 +181,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                         $row_oportusuario2 = mysqli_fetch_assoc($resultado_oport2);
                         $nomebairro = $row_oportusuario2['nome'];
                         
-                    $identregador = $rs3['identregador'];
+                    
                     $valor = $rs3['valor'];
                     $status = $rs3['status'];
                     $dataehorapedida = $rs3['dataehorapedida'];
@@ -216,11 +207,11 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
 $resultado_oport1sj = mysqli_query($conexao2, $result_clioport1sj);
 while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
     $linkfotoj = $row_nomeclioport1sj['linkfoto'];
-    $nomeentregador =  $row_nomeclioport1sj['nome'];
+    $nomeentreg =  $row_nomeclioport1sj['nome'];
 } ?>
                                                    <td>
   <figure class="image is-24x24">
-  <img class="is-rounded" title="<?php echo $nomeentregador ?>" src="<?php echo $linkfotoj ?>">
+  <img class="is-rounded" title="<?php echo $nomeentreg ?>" src="<?php echo $linkfotoj ?>">
   </figure></td>
                                                <td><a class="has-text-black">ID <?php echo $identrega ?></a></td>          
                                                <td><a class="has-text-black"><?php echo date('d/m/y H:i', $dateehorped) ?></a></td>  
@@ -231,23 +222,23 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
                                               <?php } ?>
                                                 </tbody>
                                             </table>
-
-                                            <?php 
+                                            
+                                            <?php  
                                             if ($statusini == 'Todos') {
-                                                $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";  
+                                            $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
                                         } elseif ($statusini != 'Todos')  {
-                                            $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                            $sql45j = "SELECT SUM(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND  status = '$status' AND dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";    
                                         }
-                                            $exc45j = mysqli_query($conexao2, $sql45j);
+                                    $exc45j = mysqli_query($conexao2, $sql45j);
                                     $row45j = mysqli_fetch_assoc($exc45j);
                                     $valorperiodo = $row45j['total450'];     
-
+                                    
                                     if ($statusini == 'Todos') {
                                       $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
                                     } elseif ($statusini != 'Todos')  {
-                                        $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";  
-                                    }
-                                        $exsdsd = mysqli_query($conexao2, $sql4gh);
+                                        $sql4gh = "SELECT COUNT(valor)as total450 FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND  dataehorapedida BETWEEN '$data_sem_barra1' AND '$data_sem_barra2'";
+                                    }  
+                                    $exsdsd = mysqli_query($conexao2, $sql4gh);
                                     $rodfdf = mysqli_fetch_assoc($exsdsd);
                                     $entregasperiodo = $rodfdf ['total450']; 
 
@@ -257,13 +248,13 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
 
                                      
                        
-                                    <label class="label">Estabelecimento: <?php echo $nomeestabelecimento ?> </label> 
+                                    <label class="label">Entregador: <?php echo $nomeentregador ?> </label> 
                                     <label class="label">Período: De <?php echo date('d/m/y H:i', $dateinic) ?> até <?php echo date('d/m/y H:i', $datefin) ?>  </label>    
                                     <label class="label">Total de entregas: <?php echo $entregasperiodo ?> </label>
                                     <label class="label">Valor Total: R$ <?php echo $valorperiodo ?> </label>
                                     
                                             <?php   
-  } elseif (empty($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) { ?>
+  } elseif (empty($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) { ?>
 
 
 <label class="label">Você colocou parametros errado pro relatório.</label>                             
