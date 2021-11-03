@@ -129,7 +129,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
             if (isset($_GET['estabelecimento']) && ($_GET['status']) && ($_GET['data']) && ($_GET['data2'])) {
 
               $nomeestabelecimento = $_GET['estabelecimento'];
-              $status = ($_GET['status']);
+              $statusini = ($_GET['status']);
               $de = $_GET['data'];
               
                   $de = explode(" ", $de);
@@ -176,7 +176,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                if ($statusini == 'Todos') {
                 $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
             } elseif ($statusini != 'Todos')  {
-                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
+                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$statusini' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
             }
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
