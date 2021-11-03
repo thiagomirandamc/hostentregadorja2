@@ -88,7 +88,7 @@ $row_opfxc = mysqli_fetch_assoc($resuasfg);
 <label id="complemento" class="label">Complemento</label>
 
 
-    <input class="input is-info" type="text"  name="complemento" required>
+    <input class="input is-info" type="text"  name="complemento" >
 
 </div>
 
