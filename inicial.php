@@ -59,7 +59,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
              $permissao = $rspl['permissao']; } }    ?>                
                     
                     <?php
-                    if ($permissao == '1' || $setor == '4') { ?>
+                    if ($permissao == '1' || $permissao == '4') { ?>
                     <div class="content">
                         <a href="../Entrega/solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Solicitar Entrega</a>
                     </div> 
