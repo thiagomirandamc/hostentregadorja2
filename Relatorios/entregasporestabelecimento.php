@@ -91,7 +91,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                           <div class="select is-info">
                           <select name="status">
                               <option><?php echo $statuspesq ?></option>
-                              <option></option>
+                              <option>Todos</option>
                               <option>Aberta</option>
                               <option>Cancelada</option>
                               <option>Fechada</option>
@@ -173,7 +173,11 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
 </thead>
 <tbody>                 
                <?php
+               if ($statusini == 'Todos') {
+                $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
+            } elseif ($statusini != 'Todos')  {
                 $sql13 = "select * FROM entregas WHERE idestabelecimento = '$idestabelecimento' AND status = '$status' AND dataehorapedida BETWEEN '$data_sem_barra1' and '$data_sem_barra2' ";
+            }
                 $execut3 = mysqli_query($conexao2, $sql13);
                 
                     while ($rs3 = mysqli_fetch_assoc($execut3)) {
