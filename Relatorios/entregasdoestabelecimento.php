@@ -268,10 +268,7 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
 </div>
                         
                         <br>
-                        <?php }  else { ?>
-
-<label id="referencia" class="label">Você não tem permissão para essa página.</label>
-<?php } ?>             
+                        <?php } ?>
                      
                         </div>
                   
