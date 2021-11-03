@@ -71,7 +71,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
 
         <div class="column is-4 is-offset-4">
 
-            <form action="entregasdoentregador.php" method="GET">
+            <form action="entregasdoestabelecimento.php" method="GET">
                  
                   <label class="label">Status:</label>
                   <div class="field has-addons">
@@ -268,7 +268,10 @@ while ($row_nomeclioport1sj = mysqli_fetch_assoc($resultado_oport1sj)){
 </div>
                         
                         <br>
-                        <?php } ?>
+                        <?php }  else { ?>
+
+<label id="referencia" class="label">Você não tem permissão para essa página.</label>
+<?php } ?>             
                      
                         </div>
                   
