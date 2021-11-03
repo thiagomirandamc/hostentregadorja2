@@ -71,7 +71,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppentregador\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\","
+  CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppentregador\",\n\t\"userId\": \"dd38ff04-d20b-4e09-b023-b65b4f84301a\",\n\t\"serviceId\": \"4d0dc0d0-1f41-4ce6-ae1a-4a30bc213ddd\","
     . "\n\t\"text\": \"*Entregador Já* \\n*Olá $nomesessao, você acaba de ser o entregador da entrega ID $identrega* \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valor \\n*Observações:* $observacoes \\n. \\nSe você precisar consultar a entrega, acesse abaixo: \\nhttps://$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$identrega  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
@@ -94,7 +94,7 @@ curl_setopt_array($curls, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppestabelecimento\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"2a9c5a20-58ba-4432-97c7-9ec65e486aea\","
+  CURLOPT_POSTFIELDS => "{\n\t\"number\": \"55$wppestabelecimento\",\n\t\"userId\": \"7fd6c52c-28af-4185-98d7-2c4287507476\",\n\t\"serviceId\": \"4d0dc0d0-1f41-4ce6-ae1a-4a30bc213ddd\","
     . "\n\t\"text\": \"*Entregador Já* \\n*O Entregador: $nomesessao aceitou sua entrega.* \\n*Entrega ID:* $identrega \\n*Estabelecimento:* $nomeestabelecimento \\n*Endereço:* $logradouro , $numero \\n*Complemento:* $complemento \\n*Bairro:* $bairro \\n*Ponto de Referência*: $referencia \\n*Valor*: R$$valor \\n*Observações:* $observacoes \\n. \\nSe você precisar consultar, acesse abaixo: \\nhttps://$link.entregadorja.com.br/Entrega/aceiteentregador.php?identrega=$identrega  \"\n\t\n}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Bearer f04b8e839f764532ffee75fd05ebeaa59bf6b0c1",
