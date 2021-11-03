@@ -63,9 +63,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     <div class="content">
                         <a href="../Entrega/solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Solicitar Entrega</a>
                     </div> 
-                    <div class="content">
-                        <a href="../solicitaentrega.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Cancelar entrega</a>
-                    </div>
+                
                     
                    <?php } ?> 
                     <div class="content">
@@ -76,9 +74,7 @@ $cult = "SELECT * FROM usuario WHERE nome ='$usuario'";
                     </div>
                     <?php
                     if ($permissao == '1' || $permissao == '2') { ?>
-                    <div class="content">
-                        <a href="cadastrosgerais/escolhecadgerais.php" type="button" class="button is-block is-link is-rounded is-large is-fullwidth">Cadastros Gerais</a>
-                    </div>
+                    
                     <?php } ?> 
                     
                    
